@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_22_162712) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_22_165946) do
+  create_table "user_transactions", force: :cascade do |t|
+    t.integer "owner_id", null: false
+    t.integer "category_id", null: false
+    t.decimal "amount"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_user_transactions_on_category_id"
+    t.index ["owner_id"], name: "index_user_transactions_on_owner_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -25,4 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_162712) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "user_transactions", "categories"
+  add_foreign_key "user_transactions", "users", column: "owner_id"
 end
