@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_22_165946) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_25_161145) do
+  create_table "favorites", force: :cascade do |t|
+    t.integer "credit_card_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["credit_card_id"], name: "index_favorites_on_credit_card_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "user_transactions", force: :cascade do |t|
     t.integer "owner_id", null: false
     t.integer "category_id", null: false
@@ -36,6 +45,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_165946) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "favorites", "credit_cards"
+  add_foreign_key "favorites", "users"
   add_foreign_key "user_transactions", "categories"
   add_foreign_key "user_transactions", "users", column: "owner_id"
 end
