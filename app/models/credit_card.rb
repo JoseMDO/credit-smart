@@ -13,7 +13,7 @@
 #
 class CreditCard < ApplicationRecord
   has_many :favorites
-  has_many :rewards
-
+  
+  has_many :categories, through: :rewards, source: :category
 
 end
