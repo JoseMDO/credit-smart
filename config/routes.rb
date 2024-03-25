@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  resources :favorites
-  resources :user_transactions
-  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  
   # Defines the root path route ("/")
   # root "articles#index"
+  
+  resources :favorites, only: [:new, :create, :destroy, :index, ]
+  resources :user_transactions, only: [:new, :create, :destroy, :edit, :update, :index, :show]
+  devise_for :users
+
+
 
   root "users#index"
 end
