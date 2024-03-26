@@ -1,10 +1,12 @@
 desc "Fill the database tables with some sample data"
 task({ :sample_data => :environment }) do
-  User.destroy_all
   UserTransaction.destroy_all
   Favorite.destroy_all
+  User.destroy_all
 
   users = []
+
+
 
   5.times do
     username = Faker::Name.first_name
@@ -12,6 +14,10 @@ task({ :sample_data => :environment }) do
     password = "password"
     users.append(User.create(username: username, email: email, password: password))
   end
+
+  users.append(User.create(username: "alice", email: "alice@example.com", password: "password"))
+  users.append(User.create(username: "bob", email: "bob@example.com", password: "password"))
+  
 
   transactions = []
 
