@@ -3,14 +3,50 @@ class UserTransactionsController < ApplicationController
 
   # GET /user_transactions or /user_transactions.json
   def index
+    @credit_cards = CreditCard.all
+  
+    @credit_card_totals = {}
+    @credit_cards.each do |credit_card|
+      @credit_card_totals[credit_card.id] = 0
+    end
+  
     @user_transactions = UserTransaction.all
+    @user_transactions.each do |transaction|
+      category_id = transaction.category_id
+      @credit_cards.each do |credit_card|
+        if reward = Reward.find_by(credit_card_id: credit_card.id, category_id: category_id)
+          percentage_back = reward.percentage_back
+        else
+          percentage_back = Reward.find_by(credit_card_id: credit_card.id, category_id: Category.find_by(name: "All")).percentage_back
+        end
+        cash_back = transaction.amount * (percentage_back / 100)
+        @credit_card_totals[credit_card.id] += cash_back
+      end
+    end
   end
 
   # GET /user_transactions/1 or /user_transactions/1.json
   def show
     @credit_cards = CreditCard.all
-    @rewards = Reward.all
+  
+    @credit_card_totals = {}
+    @credit_cards.each do |credit_card|
+      @credit_card_totals[credit_card.id] = 0
+    end
+  
+    category_id = @user_transaction.category_id
+  
+    @credit_cards.each do |credit_card|
+      if reward = Reward.find_by(credit_card_id: credit_card.id, category_id: category_id)
+        percentage_back = reward.percentage_back
+      else
+        percentage_back = Reward.find_by(credit_card_id: credit_card.id, category_id: Category.find_by(name: "All")).percentage_back
+      end
+      cash_back = @user_transaction.amount * (percentage_back / 100)
+      @credit_card_totals[credit_card.id] += cash_back
+    end
   end
+  
 
   # GET /user_transactions/new
   def new
@@ -60,13 +96,14 @@ class UserTransactionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_transaction
-      @user_transaction = UserTransaction.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_transaction_params
-      params.require(:user_transaction).permit(:category_id, :owner_id, :category_id, :amount, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_transaction
+    @user_transaction = UserTransaction.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_transaction_params
+    params.require(:user_transaction).permit(:category_id, :owner_id, :category_id, :amount, :description)
+  end
 end

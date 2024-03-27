@@ -13,6 +13,6 @@
 
 <% @credit_cards.each do |credit_card| %>
 
-  <%= render "shared/credit_card", credit_card: credit_card, rewards: @rewards %>
+  <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
 
 <% end %>

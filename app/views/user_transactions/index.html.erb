@@ -11,3 +11,10 @@
 </div>
 
 <%= link_to "New user transaction", new_user_transaction_path %>
+
+
+<% @credit_cards.each do |credit_card| %>
+  
+  <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
+
+<% end %>
