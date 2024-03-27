@@ -12,11 +12,9 @@
       <p>Issuer: <%= credit_card.issuer %></p>
     </li>
     <li class="list-group-item">
-      <%# if Reward.find_by(credit_card_id: credit_card.id, category_id: @user_transaction.category_id).percentage_back %>
-<!--        <h6>Cash Back: <%#= Reward.find_by(credit_card_id: credit_card.id, category_id: @user_transaction.category_id).percentage_back  %></h6>-->
-      <%# else %>
-<!--        <h6>Cash Back: <%#= Reward.find_by(credit_card_id: credit_card.id, category_id: Category.where(name: "All")).percentage_back  %></h6>  -->
-      <%# end %>
+      <h5>
+        Total Cash Back: <%= "%.2f" % total.round(2) %>
+      </h5>
     </li>
   </ul>
   <div class="card-body">

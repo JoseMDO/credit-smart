@@ -6,7 +6,7 @@
 #  percentage_back :decimal(, )
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  category_id     :integer          not null
+#  category_id     :integer          not null 
 #  credit_card_id  :integer          not null
 #
 # Indexes
@@ -23,6 +23,6 @@ class Reward < ApplicationRecord
   belongs_to :category
   belongs_to :credit_card
 
-
+  
   
 end
