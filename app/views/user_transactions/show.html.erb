@@ -1,6 +1,7 @@
-<p style="color: green"><%= notice %></p>
+
 
 <%= render @user_transaction %>
+
 
 <div>
   <%= link_to "Edit this user transaction", edit_user_transaction_path(@user_transaction) %> |
@@ -8,3 +9,10 @@
 
   <%= button_to "Destroy this user transaction", @user_transaction, method: :delete %>
 </div>
+
+
+<% @credit_cards.each do |credit_card| %>
+
+  <%= render "shared/credit_card", credit_card: credit_card, rewards: @rewards %>
+
+<% end %>

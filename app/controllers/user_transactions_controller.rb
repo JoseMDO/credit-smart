@@ -8,6 +8,8 @@ class UserTransactionsController < ApplicationController
 
   # GET /user_transactions/1 or /user_transactions/1.json
   def show
+    @credit_cards = CreditCard.all
+    @rewards = Reward.all
   end
 
   # GET /user_transactions/new
