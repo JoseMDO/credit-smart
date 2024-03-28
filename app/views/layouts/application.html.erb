@@ -8,7 +8,8 @@
 
     <%= render partial: "shared/cdn_assets" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_importmap_tags %>
   </head>
 
@@ -16,7 +17,7 @@
 
     <%= render partial: "shared/navbar" %>
 
-    <div class="container">
+    <div class="">
     
       <% if notice.present? %>
         <%= render partial: "shared/flash", locals: { message: notice, css_class: "success" } %>

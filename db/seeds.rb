@@ -14,8 +14,8 @@ Category.destroy_all
 CreditCard.destroy_all
 
 
-credit_cards = CreditCard.create({ name: "Freedom Unlimited", issuer: "Chase Bank", annual_fee: 0, url: "https://www.chase.com", details: "Test details" })
-credit_cards = CreditCard.create({ name: "Blue Cash Preferred", issuer: "American Express", annual_fee: 95, url: "https://www.americanexpress.com", details: "Test details 2" })
+credit_cards = CreditCard.create({ name: "Freedom Unlimited", issuer: "Chase Bank", annual_fee: 0, url: "https://www.chase.com", details: "Test details", image_url: "https://rewardsccapi.blob.core.windows.net/ccr1212/1435429562.png" })
+credit_cards = CreditCard.create({ name: "Blue Cash Preferred", issuer: "American Express", annual_fee: 95, url: "https://www.americanexpress.com", details: "Test details 2", image_url: "https://rewardsccapi.blob.core.windows.net/ccr1212/837101971.png" })
 
 
 

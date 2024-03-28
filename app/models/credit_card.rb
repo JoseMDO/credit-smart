@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  annual_fee :integer
 #  details    :string
+#  image_url  :string
 #  issuer     :string
 #  name       :string
 #  url        :string
