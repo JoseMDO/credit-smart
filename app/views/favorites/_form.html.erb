@@ -12,13 +12,11 @@
   <% end %>
 
   <div>
-    <%= form.label :credit_card_id, style: "display: block" %>
-    <%= form.text_field :credit_card_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>  
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.hidden_field :credit_card_id, value: credit_card_id %>
   </div>
 
   <div>

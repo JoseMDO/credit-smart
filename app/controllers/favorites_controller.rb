@@ -8,6 +8,7 @@ class FavoritesController < ApplicationController
 
   # GET /favorites/1 or /favorites/1.json
   def show
+    
   end
 
   # GET /favorites/new
@@ -22,7 +23,7 @@ class FavoritesController < ApplicationController
   # POST /favorites or /favorites.json
   def create
     @favorite = Favorite.new(favorite_params)
-
+    
     respond_to do |format|
       if @favorite.save
         format.html { redirect_to favorite_url(@favorite), notice: "Favorite was successfully created." }

@@ -5,18 +5,13 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "home#index"
   
-  resources :favorites, only: [:new, :create, :destroy, :index, ]
+  resources :favorites, only: [:new, :create, :destroy, :index, :show, :edit]
   resources :user_transactions, only: [:new, :create, :destroy, :edit, :update, :index, :show]
   devise_for :users
 
 
   # get ":username/transactions" => "user_transactions#index", as: :user_transactions
   # get ":username/favorites" => "favorites#index", as: :favorites
-
-  
-
-
-
 
 
 
