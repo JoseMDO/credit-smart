@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "home#index"
   
-  resources :favorites, only: [:new, :create, :destroy, :index, :show, :edit]
+  resources :favorites, only: [:create, :destroy, :index]
   resources :user_transactions, only: [:new, :create, :destroy, :edit, :update, :index, :show]
   devise_for :users
 

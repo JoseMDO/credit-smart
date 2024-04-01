@@ -3,7 +3,7 @@
     <div class="d-flex">
       <h5 class="card-title"><%= credit_card.name %></h5>
       <% if favorite = Favorite.find_by(user_id: current_user, credit_card_id: credit_card.id)  %>
-        <%= link_to 'Unfavorite', favorite, data: { turbo_method: :delete } %>
+        <%= link_to 'Unfavorite', favorite, data: { turbo_method: :delete }, class: "btn btn-danger" %>
       <% else %>
         <%= render "favorites/form", favorite: Favorite.new, credit_card_id: credit_card.id %>
       <% end %>
