@@ -1,18 +1,22 @@
 
 
-<%= render @user_transaction %>
+<div class="container">
+
+  <%= render @user_transaction %>
 
 
-<div>
-  <%= link_to "Edit this user transaction", edit_user_transaction_path(@user_transaction) %> |
-  <%= link_to "Back to user transactions", user_transactions_path %>
+  <div>
+    <%= link_to "Edit this user transaction", edit_user_transaction_path(@user_transaction) %> |
+    <%= link_to "Back to user transactions", user_transactions_path %>
 
-  <%= button_to "Destroy this user transaction", @user_transaction, method: :delete %>
+    <%= button_to "Destroy this user transaction", @user_transaction, method: :delete %>
+  </div>
+
+
+  <% @credit_cards.each do |credit_card| %>
+
+    <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
+
+  <% end %>
+
 </div>
-
-
-<% @credit_cards.each do |credit_card| %>
-
-  <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
-
-<% end %>
