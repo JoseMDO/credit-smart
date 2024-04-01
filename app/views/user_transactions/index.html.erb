@@ -1,20 +1,22 @@
 
-<h1>User transactions</h1>
 
-<div id="user_transactions">
-  <% @user_transactions.each do |user_transaction| %>
-    <%= render user_transaction %>
-    <p>
-      <%= link_to "Show this user transaction", user_transaction %>
-    </p>
+<div class="container">
+  <h1>User transactions</h1>
+  <div id="user_transactions">
+    <% @user_transactions.each do |user_transaction| %>
+      <%= render user_transaction %>
+      <p>
+        <%= link_to "Show this user transaction", user_transaction %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New user transaction", new_user_transaction_path %>
+
+
+  <% @credit_cards.each do |credit_card| %>
+    
+    <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
+
   <% end %>
 </div>
-
-<%= link_to "New user transaction", new_user_transaction_path %>
-
-
-<% @credit_cards.each do |credit_card| %>
-  
-  <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
-
-<% end %>
