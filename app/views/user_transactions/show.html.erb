@@ -6,7 +6,7 @@
 
 
   <div>
-    <%= link_to "Edit this user transaction", edit_user_transaction_path(@user_transaction) %> |
+    <%= link_to "Edit this user transaction", edit_transaction_path(id: @user_transaction.id) %> |
     <%= link_to 'Back to Transactions', current_user_transactions_path(username: current_user.username)  %>
 
     <%= button_to "Destroy this user transaction", @user_transaction, method: :delete %>
