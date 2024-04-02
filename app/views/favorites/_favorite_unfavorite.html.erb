@@ -1,0 +1,7 @@
+
+
+<% if favorite %>
+  <%= link_to 'Unfavorite', favorite, data: { turbo_method: :delete } %>
+<% else %>
+  <%= render "favorites/form", favorite: Favorite.new, credit_card_id: credit_card.id %>
+<% end %>

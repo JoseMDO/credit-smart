@@ -4,10 +4,20 @@ class FavoritesController < ApplicationController
   # GET /favorites or /favorites.json
   def index
     @favorites = Favorite.all
+    @user_transactions = UserTransaction.all
+    @credit_cards = []
+    @favorites.each do |favorite|
+      @credit_cards.append(CreditCard.find_by(id: favorite.credit_card_id))
+    end
+    @credit_card_totals = {}
+    @credit_cards.each do |credit_card|
+      @credit_card_totals[credit_card.id] = credit_card.total_cash_back
+    end
   end
 
   # GET /favorites/1 or /favorites/1.json
   def show
+    
   end
 
   # GET /favorites/new
@@ -22,10 +32,10 @@ class FavoritesController < ApplicationController
   # POST /favorites or /favorites.json
   def create
     @favorite = Favorite.new(favorite_params)
-
+    
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to favorite_url(@favorite), notice: "Favorite was successfully created." }
+        format.html { redirect_to favorites_url(@favorite), notice: "Favorite was successfully created." }
         format.json { render :show, status: :created, location: @favorite }
       else
         format.html { render :new, status: :unprocessable_entity }
