@@ -11,7 +11,7 @@ class UserTransactionsController < ApplicationController
     @credit_cards = CreditCard.all
     @credit_card_totals = {}
     @credit_cards.each do |credit_card|
-      @credit_card_totals[credit_card.id] = credit_card.total_cash_back
+      @credit_card_totals[credit_card.id] = credit_card.total_cash_back(current_user)
     end
   
   end
@@ -41,7 +41,7 @@ class UserTransactionsController < ApplicationController
 
     respond_to do |format|
       if @user_transaction.save
-        format.html { redirect_to user_transaction_url(@user_transaction), notice: "User transaction was successfully created." }
+        format.html { redirect_to current_transaction_url(id: @user_transaction.id, username: current_user.username), notice: "User transaction was successfully created." }
         format.json { render :show, status: :created, location: @user_transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class UserTransactionsController < ApplicationController
   def update
     respond_to do |format|
       if @user_transaction.update(user_transaction_params)
-        format.html { redirect_to user_transaction_url(@user_transaction), notice: "User transaction was successfully updated." }
+        format.html { redirect_to current_transaction_url(id: @user_transaction.id, username: current_user.username), notice: "User transaction was successfully updated." }
         format.json { render :show, status: :ok, location: @user_transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -68,7 +68,7 @@ class UserTransactionsController < ApplicationController
     @user_transaction.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_transactions_url, notice: "User transaction was successfully destroyed." }
+      format.html { redirect_to current_user_transactions_url(username: current_user.username), notice: "User transaction was successfully destroyed." }
       format.json { head :no_content }
     end
   end

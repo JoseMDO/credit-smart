@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
     end
     @credit_card_totals = {}
     @credit_cards.each do |credit_card|
-      @credit_card_totals[credit_card.id] = credit_card.total_cash_back
+      @credit_card_totals[credit_card.id] = credit_card.total_cash_back(current_user)
     end
   end
 

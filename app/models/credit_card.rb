@@ -19,9 +19,9 @@ class CreditCard < ApplicationRecord
 
 
   # THIS CALCULATES THE TOTAL CAHS BACK FOR ALL THE USERS TRANSACTIONS FOR ALL CREDIT CARDS
-  def total_cash_back
+  def total_cash_back(user)
     total_cash_back = 0
-    user_transactions = UserTransaction.all
+    user_transactions = UserTransaction.where(owner_id: user.id)
     user_transactions.each do |transaction|
       category_id = transaction.category_id
       if reward = Reward.find_by(category_id: category_id, credit_card_id: self.id)
