@@ -5,5 +5,5 @@
 <br>
 
 <div>
-  <%= link_to "Back to favorites", favorites_path %>
+  <%= link_to 'Favorites', current_user_favorites_path(username: current_user.username), class: "nav-link"  %>
 </div>

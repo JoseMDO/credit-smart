@@ -6,19 +6,13 @@ Rails.application.routes.draw do
   root "home#index"
   
   resources :favorites, only: [:create, :destroy, :index]
-  resources :user_transactions, only: [:new, :create, :destroy, :edit, :update, :index, :show]
+  resources :user_transactions
   devise_for :users
 
 
-  # get ":username/transactions" => "user_transactions#index", as: :user_transactions
-  # get ":username/favorites" => "favorites#index", as: :favorites
+  get ":username/transactions" => "user_transactions#index", as: :current_user_transactions
+  get ":username/transaction/:id" => "user_transactions#show", as: :current_transaction
+  get ":username/favorites" => "favorites#index", as: :current_user_favorites
 
 
-
-  # get ":username" => "users#show", as: :user
-  # get ":username/liked" => "users#liked", as: :liked
-  # get ":username/feed" => "users#feed", as: :feed
-  # get ":username/discover" => "users#discover", as: :discover
-  # get ":username/followers" => "users#followers", as: :followers
-  # get ":username/following" => "users#following", as: :following
 end

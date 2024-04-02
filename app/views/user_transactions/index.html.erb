@@ -6,7 +6,7 @@
     <% @user_transactions.each do |user_transaction| %>
       <%= render user_transaction %>
       <p>
-        <%= link_to "Show this user transaction", user_transaction %>
+        <%= link_to 'Show Transaction', current_transaction_path(id: user_transaction.id) %>
       </p>
     <% end %>
   </div>
