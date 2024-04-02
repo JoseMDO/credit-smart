@@ -1,9 +1,11 @@
 class FavoritesController < ApplicationController
   before_action :set_favorite, only: %i[ show edit update destroy ]
+  before_action {authorize (@favorite || Favorite)}
 
   # GET /favorites or /favorites.json
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
+    authorize(policy_scope(@favorites))
     @user_transactions = UserTransaction.all
     @credit_cards = []
     @favorites.each do |favorite|
@@ -35,7 +37,7 @@ class FavoritesController < ApplicationController
     
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to favorites_url(@favorite), notice: "Favorite was successfully created." }
+        format.html { redirect_to current_user_favorites_url(username: current_user.username), notice: "Favorite was successfully created." }
         format.json { render :show, status: :created, location: @favorite }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -62,7 +64,7 @@ class FavoritesController < ApplicationController
     @favorite.destroy
 
     respond_to do |format|
-      format.html { redirect_to favorites_url, notice: "Favorite was successfully destroyed." }
+      format.html { redirect_to current_user_favorites_url(username: current_user.username), notice: "Favorite was successfully destroyed." }
       format.json { head :no_content }
     end
   end

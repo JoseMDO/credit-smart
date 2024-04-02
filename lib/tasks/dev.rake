@@ -44,5 +44,18 @@ task({ :sample_data => :environment }) do
       transactions.append(transaction)
     end
   end
-  puts "Generated #{users.count} users, and #{transactions.count} transactions"
+
+    favorites = []
+
+    users.each do |user|
+    credit_cards = CreditCard.all
+    credit_cards.each do |credit_card|
+      id = credit_card.id
+      favorite = Favorite.create(credit_card_id: id, user_id: user.id)
+      favorites.append(favorite)
+    end
+  end
+
+
+  puts "Generated #{users.count} users, and #{transactions.count} transactions, and #{favorites.count} favorites."
 end

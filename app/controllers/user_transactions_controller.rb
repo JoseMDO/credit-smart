@@ -1,9 +1,13 @@
 class UserTransactionsController < ApplicationController
   before_action :set_user_transaction, only: %i[ show edit update destroy ]
+  before_action {authorize (@user_transaction || UserTransaction) }
+
+
 
   # GET /user_transactions or /user_transactions.json
   def index
-    @user_transactions = UserTransaction.all
+    @user_transactions = current_user.transactions
+    authorize( policy_scope( @user_transactions ))
     @credit_cards = CreditCard.all
     @credit_card_totals = {}
     @credit_cards.each do |credit_card|
@@ -15,23 +19,10 @@ class UserTransactionsController < ApplicationController
   # GET /user_transactions/1 or /user_transactions/1.json
   def show
     @credit_cards = CreditCard.all
-  
-    
     @credit_card_totals = {}
     @credit_cards.each do |credit_card|
       @credit_card_totals[credit_card.id] = credit_card.total_cash_back_for_transaction(@user_transaction)
     end
-  
-  
-    # @credit_cards.each do |credit_card|
-    #   if reward = Reward.find_by(credit_card_id: credit_card.id, category_id: category_id)
-    #     percentage_back = reward.percentage_back
-    #   else
-    #     percentage_back = Reward.find_by(credit_card_id: credit_card.id, category_id: Category.find_by(name: "All")).percentage_back
-    #   end
-    #   cash_back = @user_transaction.amount * (percentage_back / 100)
-    #   @credit_card_totals[credit_card.id] += cash_back
-    # end
   end
   
 
