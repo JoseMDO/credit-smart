@@ -12,11 +12,11 @@
 <!--  </div>-->
 
   <div id="favorites">
-    <% if @credit_cards %>
+    <% if @credit_cards != [] %>
       <% @credit_cards.each do |credit_card| %>
         <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id]  %>
       <% end %>
-    <% else %>
+    <% else %>  
       <h1>Add some cards to your favorites to compare them side by side!</h1>
     <% end%>
   </div>
