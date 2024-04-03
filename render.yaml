@@ -1,3 +1,9 @@
+databases:
+  - name: credit-smart
+    databaseName: credit-smart
+    user: credit-smart
+    plan: free
+
 services:
   - type: web
     name: credit-smart # the name of this service, eg hello-world
@@ -10,12 +16,5 @@ services:
         fromDatabase:
           name: credit-smart
           property: connectionString
-      - key: RAILS_MASTER_KEY #SECRET_BASE_KEY
-        #generateValue: true 
+      - key: RAILS_MASTER_KEY 
         sync: false
-
-databases:
-- name: credit-smart
-  databaseName: credit-smart
-  user: credit-smart
-  plan: free
