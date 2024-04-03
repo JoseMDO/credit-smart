@@ -85,6 +85,7 @@ test:
 #
 production:
   <<: *default
-  database: credit_smart
-  username: credit_smart_user
+  # database: credit_smart
+  # username: credit_smart_user
   url: <%= ENV['DATABASE_URL'] %>
+  # password: <%= ENV['PASSWORD'] %>
