@@ -14,8 +14,26 @@ Category.destroy_all
 CreditCard.destroy_all
 
 
-credit_cards = CreditCard.create({ name: "Freedom Unlimited", issuer: "Chase Bank", annual_fee: 0, url: "https://www.chase.com", details: "Test details", image_url: "https://rewardsccapi.blob.core.windows.net/ccr1212/1435429562.png" })
-credit_cards = CreditCard.create({ name: "Blue Cash Preferred", issuer: "American Express", annual_fee: 95, url: "https://www.americanexpress.com", details: "Test details 2", image_url: "https://rewardsccapi.blob.core.windows.net/ccr1212/837101971.png" })
+CreditCard.create({ name: "Freedom Unlimited", issuer: "Chase Bank", annual_fee: 0, url: "https://www.chase.com", details: "Test details", image_url: "https://rewardsccapi.blob.core.windows.net/ccr1212/1435429562.png" })
+CreditCard.create({ name: "Blue Cash Preferred", issuer: "American Express", annual_fee: 95, url: "https://www.americanexpress.com", details: "Test details 2", image_url: "https://rewardsccapi.blob.core.windows.net/ccr1212/837101971.png" })
+
+CreditCard.create({ 
+    name: "Wells Fargo Active Cash", 
+    issuer: "Wells Fargo", 
+    annual_fee: 0, 
+    url: "https://creditcards.wellsfargo.com/active-cash-credit-card/", 
+    details: [
+      {
+        "24/7 Concierge service": "Find tickets to top sports and entertainment events, book travel, make dinner reservations and more with your complimentary 24/7 Visa Signature Concierge."
+      }, 
+      {
+        "Cellular Telephone Protection": "Up to $600 of cell phone protection against damage or theft. Subject to a $25 deductible."
+      },
+      {
+        "Luxury Hotel Collection": "The Active Cash Card offers you a premium collection of benefits at a selection of the world's most intriguing and prestigious properties. Benefits include room upgrade, late check-out and complimentary breakfast. Visit Visa Signature Hotel Collection7 and learn more."
+      }],
+       image_url: "https://rewardsccapi.blob.core.windows.net/ccr1212/1779647940.png" 
+      })
 
 
 
@@ -45,8 +63,15 @@ card_categories = [
       "Telecom": 6.00,
       "All": 1.00
     }
-  } 
+  },
+  {
+    "Wells Fargo Active Cash":
+    {
+      "All": "2"
+    }
+  }
 ]
+
 
 card_categories.each do |card_category|
   card_category.each do |card_name, categories|
