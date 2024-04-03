@@ -1,7 +1,7 @@
-<div class="card" style="width: 18rem">
+<div class="card bg-dark-blue mb-4" style="width: 18rem">
   <div class="card-body">
     <div class="d-flex">
-      <h5 class="card-title"><%= credit_card.name %></h5>
+      <h5 class="card-title text-light"><%= credit_card.name %></h5>
       <% if favorite = Favorite.find_by(user_id: current_user, credit_card_id: credit_card.id)  %>
         <%= link_to 'Unfavorite', favorite, data: { turbo_method: :delete }, class: "btn btn-danger" %>
       <% else %>
@@ -13,19 +13,19 @@
     <p class="card-text"><%= credit_card.details %></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
+    <li class="list-group-item bg-light-blue">
       <p>Annual Fee: <%= credit_card.annual_fee %></p>
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item bg-light-blue">
       <p>Issuer: <%= credit_card.issuer %></p>
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item bg-light-blue">
       <h5>
         Total Cash Back: <%= "%.2f" % total.round(2) %>
       </h5>
     </li>
   </ul>
   <div class="card-body">
-    <%= link_to 'Card Details', credit_card.url, target: "_blank" %>
+    <%= link_to 'Card Details', credit_card.url, target: "_blank", class: "text-light" %>
   </div>
 </div>
