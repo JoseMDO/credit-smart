@@ -40,6 +40,9 @@ body, html {
   height: 5rem;
 }
 
+.bg-cream {
+  background-color: #F9F7F7;
+}
 .bg-light-blue {
   background-color: #DBE2EF;
 }
@@ -48,7 +51,4 @@ body, html {
 }
 .bg-dark-blue {
   background-color: #112D4E;
-}
-.bg-cream {
-  background-color: #F9F7F7;
 }
