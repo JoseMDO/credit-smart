@@ -44,3 +44,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
     add_index :users, :username,              unique: true
   end
 end
+
+# DATABSE_URL = postgres://credit_smart_user:gBuVfvV63bRU2B1m27meO9c4uvCFNhiO@dpg-co6sgpuv3ddc73c8ds7g-a/credit_smart
+
+# SECRET_KEY_BASE = 102924c23b2b5f95d5a9878b8f4116b710bb1712c8728088ed90ba946c97aaf7f68f7262014ea65966e52f6c88620eab88dd6d8fa7b47de699ad00e1525b9c5a
+
+# ./bin/render-build.sh
+
+# ./bin/rails server
