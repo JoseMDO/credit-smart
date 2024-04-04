@@ -1,7 +1,7 @@
 databases:
   - name: credit_smart
-    databaseName: credit_smart_mdih
-    user: ccredit_smart_mdih_user
+    databaseName: credit_smart_755b
+    user: credit_smart_755b_user
     plan: free
 
 services:
@@ -14,7 +14,7 @@ services:
     envVars: # this section sets some ENV variables needed by Render for deployment
       - KEY: DATABASE_URL
         fromDatabase:
-          name: credit_smart_mdih
+          name: credit_smart_755b
           property: connectionString
       - key: RAILS_MASTER_KEY 
         sync: false

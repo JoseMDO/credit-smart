@@ -1,16 +1,16 @@
 class ApplicationController < ActionController::Base
   skip_forgery_protection
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  include Pundit
+  include Pundit::Authorization
 
   after_action :verify_authorized, unless: :skip_authorization_check?
   after_action :verify_policy_scoped, only: :index, unless: :skip_policy_scope_check?
 
   before_action :authenticate_user!
   # before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
-
+  
+  
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   protected
