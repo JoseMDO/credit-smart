@@ -6,6 +6,8 @@ ruby "3.2.1"
 
 gem "devise"   
 
+gem 'simple_form'
+
 gem "pundit"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
