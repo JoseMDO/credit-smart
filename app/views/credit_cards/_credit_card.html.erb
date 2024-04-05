@@ -1,4 +1,4 @@
-<div class="card bg-dark-blue mb-4" style="width: 18rem">
+<div class="card bg-dark-blue mb-4 d-flex w-50">
   <div class="card-body">
     <div class="d-flex">
       <h5 class="card-title text-light"><%= credit_card.name %></h5>
@@ -10,7 +10,7 @@
       <%#= render "favorites/favorite_unfavorite", favorite: Favorite.find_by(user_id: current_user, credit_card_id: credit_card.id) %>
     </div>
     <img src="<%= credit_card.image_url %>" class="card-img-top" alt="...">
-    <p class="card-text"><%= credit_card.details %></p>
+    <p class="card-text text-cream"><%= credit_card.details %></p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item bg-light-blue">

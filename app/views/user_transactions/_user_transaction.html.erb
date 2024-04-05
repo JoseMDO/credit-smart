@@ -1,27 +1,10 @@
-<div id="<%= dom_id user_transaction %>">
-
-  <p>
-    <strong>Owner:</strong>
-    <%= User.find_by(id: user_transaction.owner_id)&.username %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= Category.find_by(id: user_transaction.category_id).name %>
-  </p>
-  <p>
-    <strong>Category ID:</strong>
-    <%= user_transaction.category_id %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= user_transaction.amount %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= user_transaction.description %>
-  </p>
+<div class="card mb-2" id="<%= dom_id user_transaction %>">
+  <div class="card-body">
+    <h5 class="card-title"><%= user_transaction.description %></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary"><%= Category.find_by(id: user_transaction.category_id).name %></h6>
+    <p class="card-text"><%= user_transaction.amount %></p>
+    <%= link_to 'Show Transaction', current_transaction_path(id: user_transaction.id), class: "btn btn-outline-secondary" %>
+    <%= link_to "Edit this user transaction", edit_transaction_path(id: user_transaction.id), class: "btn btn-outline-secondary" %>
+  </div>
 
 </div>
