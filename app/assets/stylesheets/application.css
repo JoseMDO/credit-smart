@@ -50,5 +50,14 @@ body, html {
   background-color: #3F72AF;
 }
 .bg-dark-blue {
-  background-color: #112D4E;
+  background-color: #112
+}
+.text-cream {
+  color: #F9F7F7;
+}
+
+
+
+.card-image {
+  max-width: 500px;
 }

@@ -1,22 +1,19 @@
 
 
 <div class="container">
-  <h1>User transactions</h1>
-  <div id="user_transactions">
+  <h1 class="mb-4">My Transactions</h1>
+  <div class="d-flex flex-column flex-sm-row flex-sm-wrap" id="user_transactions">
     <% @user_transactions.each do |user_transaction| %>
       <%= render user_transaction %>
-      <p>
-        <%= link_to 'Show Transaction', current_transaction_path(id: user_transaction.id) %>
-      </p>
     <% end %>
   </div>
 
-  <%= link_to "New user transaction", new_transaction_path(username: current_user.username) %>
+  <%= link_to "New user transaction", new_transaction_path(username: current_user.username), class: "btn btn-secondary mb-2" %>
 
 
   <% @credit_cards.each do |credit_card| %>
     
-    <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
+      <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
 
   <% end %>
 </div>

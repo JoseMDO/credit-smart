@@ -1,31 +1,31 @@
-<div class="card bg-dark-blue mb-4" style="width: 18rem">
+
+<div class="card bg-dark-blue mb-4 d-flex">
   <div class="card-body">
-    <div class="d-flex">
+    <div class="d-flex justify-content-between">
       <h5 class="card-title text-light"><%= credit_card.name %></h5>
       <% if favorite = Favorite.find_by(user_id: current_user, credit_card_id: credit_card.id)  %>
         <%= link_to 'Unfavorite', favorite, data: { turbo_method: :delete }, class: "btn btn-danger" %>
       <% else %>
         <%= render "favorites/form", favorite: Favorite.new, credit_card_id: credit_card.id %>
       <% end %>
-      <%#= render "favorites/favorite_unfavorite", favorite: Favorite.find_by(user_id: current_user, credit_card_id: credit_card.id) %>
     </div>
-    <img src="<%= credit_card.image_url %>" class="card-img-top" alt="...">
-    <p class="card-text"><%= credit_card.details %></p>
+    <%= image_tag credit_card.image_url, class: "card-img-top card-image my-4",  alt: "credit-card-image"%>
+    <p class="card-text text-cream"><%= credit_card.details %></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-light-blue">
-      <p>Annual Fee: <%= credit_card.annual_fee %></p>
+    <li class="list-group-item bg-dark-blue">
+      <p class="text-cream">Annual Fee: $<%= credit_card.annual_fee %></p>
     </li>
-    <li class="list-group-item bg-light-blue">
-      <p>Issuer: <%= credit_card.issuer %></p>
+    <li class="list-group-item bg-dark-blue">
+      <p class="text-cream">Issuer: <%= credit_card.issuer %></p>
     </li>
-    <li class="list-group-item bg-light-blue">
-      <h5>
-        Total Cash Back: <%= "%.2f" % total.round(2) %>
+    <li class="list-group-item bg-dark-blue">
+      <h5 class="text-cream">
+        Total Cash Back: $<%= "%.2f" % total.round(2) %>
       </h5>
     </li>
   </ul>
   <div class="card-body">
-    <%= link_to 'Card Details', credit_card.url, target: "_blank", class: "text-light" %>
+    <%= link_to 'Card Page', credit_card.url, target: "_blank", class: "btn btn-secondary" %>
   </div>
 </div>
