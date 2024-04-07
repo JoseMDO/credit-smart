@@ -55,3 +55,9 @@ body, html {
 .text-cream {
   color: #F9F7F7;
 }
+
+
+
+.card-image {
+  max-width: 500px;
+}

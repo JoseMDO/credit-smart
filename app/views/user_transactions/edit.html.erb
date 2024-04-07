@@ -1,10 +1,17 @@
-<h1>Editing user transaction</h1>
+<div class="container w-50">
+  <div class="d-flex flex-column">
 
-<%= render "form", user_transaction: @user_transaction %>
+    <h1>Editing user transaction</h1>
 
-<br>
+    <%= render "form", user_transaction: @user_transaction %>
 
-<div>
-  <%= link_to "Show this user transaction", current_transaction_path(username: current_user.username, id: @user_transaction.id) %> |
-  <%= link_to "Back to user transactions", current_user_transactions_path(username: current_user.username) %>
+    <br>
+
+    <div>
+      <%= link_to "Show Transaction", current_transaction_path(username: current_user.username, id: @user_transaction.id), class:"btn btn-outline-secondary mb-2" %>
+      <%= link_to "Back to user transactions", current_user_transactions_path(username: current_user.username), class:"btn btn-outline-secondary mb-2" %>
+    </div>
+
+  </div>
+
 </div>
