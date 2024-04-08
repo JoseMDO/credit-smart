@@ -24,6 +24,9 @@ class UserTransaction < ApplicationRecord
   belongs_to :owner, class_name: "User"
   belongs_to :category
 
+  def to_s 
+    "#{description.truncate(10)}"
+  end
 
   
 end

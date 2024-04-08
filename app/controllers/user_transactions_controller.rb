@@ -6,6 +6,9 @@ class UserTransactionsController < ApplicationController
 
   # GET /user_transactions or /user_transactions.json
   def index
+    @breadcrumbs = [
+      {content: "Transactions", href: user_transactions_path},
+    ]
     @user_transactions = current_user.transactions
     authorize( policy_scope( @user_transactions ))
     @credit_cards = CreditCard.all
@@ -18,6 +21,10 @@ class UserTransactionsController < ApplicationController
 
   # GET /user_transactions/1 or /user_transactions/1.json
   def show
+    @breadcrumbs = [
+      {content: "Transactions", href: current_user_transactions_path(username: current_user.username)},
+      {content: @user_transaction.to_s, href: current_transaction_path(@user_transaction)}
+    ]
     @credit_cards = CreditCard.all
     @credit_card_totals = {}
     @credit_cards.each do |credit_card|
@@ -28,11 +35,20 @@ class UserTransactionsController < ApplicationController
 
   # GET /user_transactions/new
   def new
+    @breadcrumbs = [
+      {content: "Transactions", href: current_user_transactions_path(username: current_user.username)},
+      {content: "New"},
+    ]
     @user_transaction = UserTransaction.new
   end
 
   # GET /user_transactions/1/edit
   def edit
+    @breadcrumbs = [
+      {content: "Transactions", href: current_user_transactions_path(username: current_user.username)},
+      {content: @user_transaction.to_s, href: current_transaction_path(@user_transaction)},
+      {content: "Edit", href: edit_transaction_path(id: @user_transaction.id)}
+    ]
   end
 
   # POST /user_transactions or /user_transactions.json

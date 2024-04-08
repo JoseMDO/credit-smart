@@ -1,14 +1,11 @@
 
 <div class="container">
 
-  <h1>New user transaction</h1>
-
+  <h1>New Transaction</h1>
+  <%= render "shared/breadcrumbs" %>
   <%= render "form", user_transaction: @user_transaction %>
 
   <br>
 
-  <div>
-    <%= link_to "Back to user transactions", current_user_transactions_path(username: current_user.username) %>
-  </div>
 
 </div>

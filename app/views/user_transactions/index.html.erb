@@ -2,6 +2,7 @@
 
 <div class="container">
   <h1 class="mb-4">My Transactions</h1>
+  <%= render "shared/breadcrumbs" %>
   <div class="d-flex flex-column flex-sm-row flex-sm-wrap" id="user_transactions">
     <% @user_transactions.each do |user_transaction| %>
       <%= render user_transaction %>
