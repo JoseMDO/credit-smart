@@ -8,8 +8,8 @@
       <%= render user_transaction %>
     <% end %>
   </div>
-
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="d-flex flex-column justify-content-center align-items-center my-4 gap-4">
+    <%= paginate @user_transactions %>
     <%= link_to "Add Transaction", new_transaction_path(username: current_user.username), class: "btn btn-secondary btn-lg mb-4" %>
   </div>
 

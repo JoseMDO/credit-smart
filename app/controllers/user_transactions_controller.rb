@@ -9,14 +9,14 @@ class UserTransactionsController < ApplicationController
     @breadcrumbs = [
       {content: "Transactions", href: user_transactions_path},
     ]
-    @user_transactions = current_user.transactions
+    @user_transactions = current_user.transactions.page(params[:page]).per(5)
     authorize( policy_scope( @user_transactions ))
     @credit_cards = CreditCard.all
     @credit_card_totals = {}
     @credit_cards.each do |credit_card|
       @credit_card_totals[credit_card.id] = credit_card.total_cash_back(current_user)
     end
-  
+
   end
 
   # GET /user_transactions/1 or /user_transactions/1.json
@@ -31,7 +31,7 @@ class UserTransactionsController < ApplicationController
       @credit_card_totals[credit_card.id] = credit_card.total_cash_back_for_transaction(@user_transaction)
     end
   end
-  
+
 
   # GET /user_transactions/new
   def new

@@ -18,12 +18,12 @@ task({ :sample_data => :environment }) do
 
   users.append(User.create(username: "alice", email: "alice@example.com", password: "password"))
   users.append(User.create(username: "bob", email: "bob@example.com", password: "password"))
-  
+
 
   transactions = []
 
   users.each do |user|
-    10.times do
+    50.times do
       amount = Faker::Number.decimal(l_digits: 2)
       total_categories = Category.count
 
