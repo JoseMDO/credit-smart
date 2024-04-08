@@ -1,13 +1,14 @@
 
 
 <div class="container">
+  <%= render "shared/breadcrumbs" %>
 
   <%= render @user_transaction %>
 
 
-  <div>
-    <%= link_to "Back to user transactions", current_user_transactions_path(username: current_user.username), class:"btn btn-secondary mb-2" %>
-  </div>
+<!--  <div>-->
+    <%#= link_to "Back to user transactions", current_user_transactions_path(username: current_user.username), class:"btn btn-secondary mb-2" %>
+<!--  </div>-->
 
 
   <% @credit_cards.each do |credit_card| %>
