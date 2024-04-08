@@ -13,10 +13,11 @@
     <%= link_to "Add Transaction", new_transaction_path(username: current_user.username), class: "btn btn-secondary btn-lg mb-4" %>
   </div>
 
+  <div class="m-2">
+    <% @credit_cards.each do |credit_card| %>
+      
+        <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
 
-  <% @credit_cards.each do |credit_card| %>
-    
-      <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
-
-  <% end %>
+    <% end %>    
+  </div>
 </div>
