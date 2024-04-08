@@ -28,5 +28,9 @@ class UserTransaction < ApplicationRecord
     "#{description.truncate(10)}"
   end
 
+  def to_s_full
+    "#{description}"
+  end
+
   
 end

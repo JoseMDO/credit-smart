@@ -20,10 +20,10 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li>
-          <%= link_to 'User Transaction', current_user_transactions_path(username: current_user.username), class: "nav-link"  %>
+          <%= link_to 'My Transactions', current_user_transactions_path(username: current_user.username), class: "nav-link"  %>
         </li>
         <li>
-          <%= link_to 'Favorites', current_user_favorites_path(username: current_user.username), class: "nav-link"  %>
+          <%= link_to 'My Favorites', current_user_favorites_path(username: current_user.username), class: "nav-link"  %>
         </li>
         <li class="nav-item">
           <%= link_to "Edit #{current_user.username.capitalize}", edit_user_registration_path, class: "nav-link" %>
