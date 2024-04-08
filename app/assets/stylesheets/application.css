@@ -61,3 +61,11 @@ body, html {
 .card-image {
   max-width: 500px;
 }
+
+
+.transaction-card {
+  transition: all .2s ease-in-out;
+}
+.transaction-card:hover {
+  transform: scale(1.1);
+}

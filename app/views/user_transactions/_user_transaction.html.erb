@@ -1,17 +1,19 @@
-<div class="card mb-4 bg-cream w-100" id="<%= dom_id user_transaction %>">
-  <div class="card-body d-flex">
-    <div class="col">
-      <h5 class="card-title"><%= user_transaction.description %></h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Category: <%= Category.find_by(id: user_transaction.category_id).name %></h6>
-      <p class="card-text">Amount: $<%= user_transaction.amount %></p>
-      <% if current_page?(action: 'index')%>
-        <%= link_to "Show individual cash back", current_transaction_path(username: current_user.username, id: user_transaction.id), class:"btn btn-outline-success mb-2" %>
-      <% end %>
-    </div>
-    <div class="col d-flex flex-column justify-content-between align-items-end">
-      <%= link_to "Edit this user transaction", edit_transaction_path(id: user_transaction.id), class: "btn btn-outline-secondary mb-2" %>
-      <%= button_to "Destroy this user transaction", user_transaction, method: :delete, class: "btn btn-outline-danger" %>
-    </div>
+<div class="card bg-light shadow transaction-card">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">
+      <%= user_transaction.description %>
+      <i class="fas fa-tag ml-2" title="Category"></i>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Category: <%= user_transaction.category_id.present? ? Category.find_by(id: user_transaction.category_id)&.name || 'Uncategorized' : 'Uncategorized' %>
+    </h6>
+    <p class="card-text">Amount: $<%= user_transaction.amount %></p>
+    <% if current_page?(action: 'index') %>
+      <%= link_to "Show Details", current_transaction_path(username: current_user.username, id: user_transaction.id), class: "btn btn-sm btn-outline-success mt-auto" %>
+    <% end %>
   </div>
-
+  <div class="card-footer text-righ d-flex justify-content-center align-items-center">
+    <%= link_to "Edit", edit_transaction_path(id: user_transaction.id), class: "btn btn-sm btn-outline-secondary" %>
+    <%= button_to "Delete", user_transaction, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger", style: "margin-left: 5px;" %>
+  </div>
 </div>

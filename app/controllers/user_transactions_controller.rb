@@ -9,7 +9,7 @@ class UserTransactionsController < ApplicationController
     @breadcrumbs = [
       {content: "Transactions", href: user_transactions_path},
     ]
-    @user_transactions = current_user.transactions.page(params[:page]).per(5)
+    @user_transactions = current_user.transactions.page(params[:page]).per(9)
     authorize( policy_scope( @user_transactions ))
     @credit_cards = CreditCard.all
     @credit_card_totals = {}
