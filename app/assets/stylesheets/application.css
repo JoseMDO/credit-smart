@@ -85,6 +85,7 @@ body, html {
   background-size: cover;
   background-position: center;
   position: relative;
+  background-attachment: fixed;
 }
 
 .overlay {
@@ -102,4 +103,62 @@ body, html {
 }
 .landing-page-card:hover {
   transform: scale(1.2);
+}
+
+
+#carouselExampleFade {
+  width: 80%; /* Adjust the width as needed */
+  max-width: 800px; /* Set a maximum width */
+  height: auto; /* Allow height to adjust based on content */
+}
+
+
+
+/* Default styles for review cards */
+.review-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.review-card-body {
+  color: white;
+}
+
+.reviewer-name {
+  font-size: 1.5rem;
+}
+
+.review-text {
+  font-size: 1.2rem;
+}
+
+/* Star rating styles */
+.star-rating {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.star {
+  color: gold; /* Set star color */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+  .review-card {
+    max-width: 300px; /* Adjust maximum width for smaller screens */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .reviewer-name {
+    font-size: 1.2rem; /* Adjust font size for reviewer name */
+  }
+
+  .review-text {
+    font-size: 1rem; /* Adjust font size for review text */
+  }
+
+  .star-rating {
+    font-size: 1.5rem; /* Adjust star size for smaller screens */
+  }
 }

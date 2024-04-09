@@ -8,7 +8,7 @@
     </div>
     <!-- Right Column - Image -->
     <div class="col-md-6 d-flex justify-content-center align-items-center p-0 m-0 overflow-hidden">
-      <%= image_tag 'credit-card-11.jpg', class: "img-fluid rounded-start-pill shadow object-fit-cover h-100", id: 'hero-image' %>
+      <%= image_tag 'credit-card-11.jpg', class: "img-fluid rounded-start-pill shadow object-fit-cover h-100 hero", id: 'hero-image'%>
     </div>
   </div>
 </div>
@@ -25,7 +25,6 @@
 <div class="div-with-background" style="background-image: url('<%= asset_path('credit-card-3.avif') %>');">
   <div class="overlay"></div>
 </div>
-
 
 <!-- Third div -->
 <div class="bg-dark-blue text-light d-flex justify-content-center align-items-center div-with-full-vh" id="benefits">
@@ -63,8 +62,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="div-with-background" style="background-image: url('<%= asset_path('credit_card_1.jpg') %>');">
   <div class="overlay">
@@ -107,3 +104,90 @@
     </div>
   </div>
 </div>
+
+<div class="bg-dark-blue text-light div-with-full-vh d-flex justify-content-center align-items-center">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style="max-width: 80%;">
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active h-100">
+        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
+          <div class="review-card-body text-center">
+            <h3 class="reviewer-name mb-3">Bob</h3>
+            <p class="review-text">"This app has streamlined my financial decisions by showing the value of credit card rewards. It's easy to compare and make informed choices. Highly recommended!"</p>
+            <div class="star-rating">
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item active h-100">
+        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
+          <div class="review-card-body text-center">
+            <h3 class="reviewer-name mb-3">Alice</h3>
+            <p class="review-text">"Great app for understanding credit card rewards. It simplifies comparisons and offers valuable tips to improve credit habits. A must-have for savvy users!"</p>
+            <div class="star-rating">
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item active h-100">
+        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
+          <div class="review-card-body text-center">
+            <h3 class="reviewer-name mb-3">John</h3>
+            <p class="review-text">"This app has changed the way I manage transactions. It's intuitive and calculates potential cash back with different credit cards for each purchase. Highly recommended for maximizing rewards!"</p>
+            <div class="star-rating">
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- Previous and Next buttons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="left: 20px;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" style="right: 20px;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+
+<div class="carousel-item">
+        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
+          <div class="review-card-body text-center">
+            <h3 class="reviewer-name mb-3">Alice</h3>
+            <p class="review-text">"Great app for understanding credit card rewards. It simplifies comparisons and offers valuable tips to improve credit habits. A must-have for savvy users!"
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="carousel-item">
+        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
+          <div class="review-card-body text-center">
+            <h3 class="reviewer-name mb-3">John</h3>
+            <p class="review-text">"This app has changed the way I manage transactions. It's intuitive and calculates potential cash back with different credit cards for each purchase. Highly recommended for maximizing rewards!"
+            </p>
+          </div>
+        </div>
+
+      </div>
