@@ -1,12 +1,26 @@
 <div class="container">
-  <div class="d-flex justify-content-between align-items-center">
-    <h1 class="mb-4">My Transactions</h1>
-    <!-- Button trigger modal -->
+  <!-- Top Header Section -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>My Transactions</h1>
+    <!-- Modal Button -->
     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       <i class="fas fa-info-circle fa-beat"></i>
     </button>
   </div>
-  <%= render "shared/breadcrumbs" %>
+
+  <!-- Add Transaction Button (moved to top) -->
+  <div class="d-flex justify-content-between mb-2">
+    <%= render "shared/breadcrumbs" %>
+    <div class="add-transaction-button">
+      <%= link_to new_transaction_path(username: current_user.username), class: "btn btn-secondary" do %>
+        <i class="fa-solid fa-circle-plus"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Breadcrumbs -->
+
+  <!-- User Transactions Section with Pagination -->
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="user_transactions">
     <% @user_transactions.each do |user_transaction| %>
       <div class="col mb-4">
@@ -14,16 +28,28 @@
       </div>
     <% end %>
   </div>
-  <div class="d-flex flex-column justify-content-center align-items-center my-4 gap-4">
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center">
     <%= paginate @user_transactions %>
-    <%= link_to "Add Transaction", new_transaction_path(username: current_user.username), class: "btn btn-secondary btn-lg mb-4" %>
   </div>
 
-  <div class="m-2">
+  <!-- Transition Element to Credit Cards -->
+  <hr class="my-5">
+
+  <div class="text-center my-5">
+    <div class="d-flex align-items-center justify-content-center mb-4">
+      <i class="fas fa-exchange-alt fa-3x me-3 text-primary"></i>
+      <h3 class="text-dark">Explore More with Cashback Credit Cards</h3>
+    </div>
+    <p class="lead text-muted">Earn extra rewards and maximize savings with cashback credit cards!</p>
+    <a href="#credit_cards_section" class="btn btn-primary btn-lg">View Cashback Cards</a>
+  </div>
+
+  <!-- Credit Cards Section -->
+  <div class="m-2" id="credit_cards_section">
     <% @credit_cards.each do |credit_card| %>
-
       <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
-
     <% end %>
   </div>
 </div>
