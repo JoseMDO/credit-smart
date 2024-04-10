@@ -2,28 +2,33 @@
   <div class="row g-0">
     <div class="col-md-4">
       <%= image_tag credit_card.image_url, class: "card-img-top card-image my-4 m-sm-2 img-fluid", alt: "credit-card-image" %>
-      <a href="<%= credit_card.url %>" target="_blank" class="btn btn-secondary m-3 ">Card Page</a>
+      <a href="<%= credit_card.url %>" target="_blank" class="btn btn-secondary m-3">Card Details</a>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="card-title text-light"><%= credit_card.name %></h5>
-          <% if favorite = Favorite.find_by(user_id: current_user, credit_card_id: credit_card.id) %>
-            <%= link_to 'Unfavorite', favorite, data: { turbo_method: :delete }, class: "btn btn-danger" %>
-          <% else %>
-            <%= render "favorites/form", favorite: Favorite.new, credit_card_id: credit_card.id %>
-          <% end %>
+          <%= render 'favorites/favorite_unfavorite', favorite: Favorite.find_by(user_id: current_user.id, credit_card_id: credit_card.id), credit_card: credit_card %>
         </div>
-        <p class="card-text text-cream"><%= credit_card.details %></p>
+        <p class="card-text text-light"><%= credit_card.details %></p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item bg-dark-blue">
-            <p class="text-cream mb-4">Annual Fee: $<%= credit_card.annual_fee %></p>
-            <p class="text-cream mb-4">Issuer: <%= credit_card.issuer %></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-cream">Annual Fee:</span>
+              <span class="text-cream">$<%= credit_card.annual_fee %></span>
+            </div>
           </li>
           <li class="list-group-item bg-dark-blue">
-            <h5 class="text-cream mt-3 mx-4">
-              Total Cash Back: $<%= "%.2f" % total.round(2) %>
-            </h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-cream">Issuer:</span>
+              <span class="text-cream"><%= credit_card.issuer %></span>
+            </div>
+          </li>
+          <li class="list-group-item bg-dark-blue">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="text-cream">Total Cash Back:</h5>
+              <h5 class="text-cream">$<%= "%.2f" % total.round(2) %></h5>
+            </div>
           </li>
         </ul>
       </div>

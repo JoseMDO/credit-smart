@@ -2,7 +2,6 @@
   <% if favorite.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(favorite.errors.count, "error") %> prohibited this favorite from being saved:</h2>
-
       <ul>
         <% favorite.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -20,6 +19,8 @@
   </div>
 
   <div>
-    <%= form.submit "Favorite", class: "btn btn-success" %>
+    <%= form.button type: "submit", class: "btn btn-light create-star-button" do %>
+      <i class="far fa-star"></i> <!-- Empty star icon -->
+    <% end %>
   </div>
 <% end %>
