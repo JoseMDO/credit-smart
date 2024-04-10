@@ -1,38 +1,37 @@
-
-
-  <%= form_with(model: user_transaction) do |form| %>
+<div class="container mt-5">
+  <%= form_with(model: user_transaction, class: "transaction-form shadow-lg") do |form| %>
     <% if user_transaction.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(user_transaction.errors.count, "error") %> prohibited this user_transaction from being saved:</h2>
-
+      <div class="alert alert-danger">
+        <h4><%= pluralize(user_transaction.errors.count, "error") %> prohibited this transaction from being saved:</h4>
         <ul>
-          <% user_transaction.errors.each do |error| %>
-            <li><%= error.full_message %></li>
+          <% user_transaction.errors.full_messages.each do |error_message| %>
+            <li><%= error_message %></li>
           <% end %>
         </ul>
       </div>
     <% end %>
 
-    <div>
+    <div class="mb-3">
       <%= form.hidden_field :owner_id, value: current_user.id %>
     </div>
 
-    <div>
-      <%= form.label :category_id, style: "display: block" %>
-      <%= form.collection_select :category_id, Category.all, :id, :name %>
+    <div class="mb-3">
+      <%= form.label :category_id, "Category" %>
+      <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select Category" }, class: "form-select transaction-card" %>
     </div>
 
-    <div>
-      <%= form.label :amount, style: "display: block" %>
-      <%= form.text_field :amount %>
+    <div class="mb-3">
+      <%= form.label :amount, "Amount" %>
+      <%= form.text_field :amount, class: "form-control transaction-card", placeholder: "Enter amount" %>
     </div>
 
-    <div>
-      <%= form.label :description, style: "display: block" %>
-      <%= form.text_field :description %>
+    <div class="mb-3">
+      <%= form.label :description, "Description" %>
+      <%= form.text_field :description, class: "form-control transaction-card", placeholder: "Enter description" %>
     </div>
 
-    <div>
-      <%= form.submit %>
+    <div class="text-center transaction-card">
+      <%= form.submit "Submit", class: "btn btn-outline-primary" %>
     </div>
   <% end %>
+</div>

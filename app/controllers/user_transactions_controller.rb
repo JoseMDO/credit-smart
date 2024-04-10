@@ -57,7 +57,7 @@ class UserTransactionsController < ApplicationController
 
     respond_to do |format|
       if @user_transaction.save
-        format.html { redirect_to current_transaction_url(id: @user_transaction.id, username: current_user.username), notice: "User transaction was successfully created." }
+        format.html { redirect_to current_transaction_url(id: @user_transaction.id, username: current_user.username), notice: "Transaction was successfully added." }
         format.json { render :show, status: :created, location: @user_transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -70,7 +70,7 @@ class UserTransactionsController < ApplicationController
   def update
     respond_to do |format|
       if @user_transaction.update(user_transaction_params)
-        format.html { redirect_to current_transaction_url(id: @user_transaction.id, username: current_user.username), notice: "User transaction was successfully updated." }
+        format.html { redirect_to current_transaction_url(id: @user_transaction.id, username: current_user.username), notice: "Transaction was successfully updated." }
         format.json { render :show, status: :ok, location: @user_transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -84,7 +84,7 @@ class UserTransactionsController < ApplicationController
     @user_transaction.destroy
 
     respond_to do |format|
-      format.html { redirect_to current_user_transactions_url(username: current_user.username), notice: "User transaction was successfully destroyed." }
+      format.html { redirect_to current_user_transactions_url(username: current_user.username), notice: "Transaction was successfully deleted." }
       format.json { head :no_content }
     end
   end
