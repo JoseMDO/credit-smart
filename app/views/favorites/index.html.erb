@@ -1,14 +1,20 @@
 
 
-<div class="container">
-  <h1>Favorites</h1>
   <div id="favorites">
-    <% if @credit_cards != [] %>
-      <% @credit_cards.each do |credit_card| %>
-        <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id]  %>
-      <% end %>
-    <% else %>  
-      <h1>Add some cards to your favorites to compare them side by side!</h1>
-    <% end%>
+    <% if @credit_cards.present? %>
+      <div class="container">
+      <h1>Favorites</h1>
+        <% @credit_cards.each do |credit_card| %>
+          <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="bg-light-blue text-light d-flex justify-content-evenly align-items-center flex-column div-with-full-vh" id="explore">
+        <div class="container text-center">
+          <h1 class="text-dark mb-4">Add some cards to your favorites to compare them side by side!</h1>
+          <h2 class="text-dark mb-4">Explore our credit card options and click the <span class="star">&#9734;</span> to save cards you're interested in.</h2>
+          <%= link_to 'Browse Card Options', current_user_transactions_path(current_user.username), class: "btn btn-secondary btn-lg" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>

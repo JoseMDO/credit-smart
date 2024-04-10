@@ -8,10 +8,10 @@
 
     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
       <li>
-        <%= link_to 'Explore', root_path(anchor: "explore"), class: "nav-link" %>
+        <%= link_to 'Explore', root_path(anchor: "explore"), class: "nav-link" %> 
       </li>
       <li>
-        <%= link_to 'Benefits', root_path(anchor: "benefits"), class: "nav-link" %>
+        <%= link_to 'Benefits', root_path(anchor: "benefits"), class: "nav-link" %> 
       </li>
       <li>
         <%= link_to 'Tips & Tricks', root_path(anchor: "tips-tricks"), class: "nav-link" %>
@@ -20,16 +20,18 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li>
-          <%= link_to 'My Transactions', current_user_transactions_path(username: current_user.username), class: "nav-link"  %>
+          <%= link_to 'Transactions', current_user_transactions_path(username: current_user.username), class: "nav-link"  %>
         </li>
         <li>
-          <%= link_to 'My Favorites', current_user_favorites_path(username: current_user.username), class: "nav-link"  %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Edit #{current_user.username.capitalize}", edit_user_registration_path, class: "nav-link" %>
+          <%= link_to 'Favorites', current_user_favorites_path(username: current_user.username), class: "nav-link"  %>
         </li>
         <li class="nav-item">
           <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to edit_user_registration_path, class: "nav-link" do %>
+            <i class="fa-solid fa-user-pen"></i>
+          <% end %>
         </li>
 
       <% else %>
