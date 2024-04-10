@@ -1,9 +1,12 @@
 
 <div class="container">
 
-  <h1>New Transaction</h1>
   <%= render "shared/breadcrumbs" %>
-  <%= render "form", user_transaction: @user_transaction %>
+
+  <div class="d-flex flex-column align-items-center">
+    <h3>Add Transaction</h3>
+    <%= render "form", user_transaction: @user_transaction %>
+  </div>
 
   <br>
 
