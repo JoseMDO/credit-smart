@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
   def index
     @favorites = current_user.favorites
     authorize(policy_scope(@favorites))
-    @user_transactions = UserTransaction.all
+    @user_transactions = current_user.transactions.page(params[:page]).per(3)
     @credit_cards = []
     @favorites.each do |favorite|
       @credit_cards.append(CreditCard.find_by(id: favorite.credit_card_id))

@@ -3,6 +3,7 @@
     <h5 class="card-title">
       <%= user_transaction.description %>
       <i class="fas fa-tag ml-2" title="Category"></i>
+      <hr>
     </h5>
     <h6 class="card-subtitle mb-2 text-muted">
       Category: <%= user_transaction.category_id.present? ? Category.find_by(id: user_transaction.category_id)&.name || 'Uncategorized' : 'Uncategorized' %>

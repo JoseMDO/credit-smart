@@ -9,7 +9,7 @@
     </button>
   </div>
 
-  <!-- Add Transaction Button (moved to top) -->
+
   <div class="d-flex justify-content-between mb-2">
     <%= render "shared/breadcrumbs" %>
     <div class="add-transaction-button">
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <!-- Breadcrumbs -->
+
 
   <!-- User Transactions Section with Pagination -->
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="user_transactions">
@@ -56,39 +56,4 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Important Notice: Cash Back Estimates</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Hello, valued users! We want to ensure transparency and clarity regarding the cash back estimates provided by our app.</p>
-
-        <h6>How It Works:</h6>
-        <ul>
-          <li>Our app calculates estimated cash back based on your transaction's category and associated credit card rewards.</li>
-          <li>Credit card rewards can vary and are subject to change. Different credit cards may offer varying percentages or benefits for specific categories.</li>
-          <li>Please note that cash back estimates are provided for informational purposes only.</li>
-        </ul>
-
-        <h6>Considerations:</h6>
-        <ul>
-          <li>Categories and percentages used for estimation purposes are subject to updates and modifications by credit card issuers.</li>
-          <li>Some credit cards may provide more detailed category specifications that can affect cash back amounts.</li>
-        </ul>
-
-        <p><strong>Disclaimer:</strong> The cash back estimates displayed in this app are approximations and should be treated as such. Actual cash back rewards may vary based on specific credit card terms and conditions.</p>
-
-        <p><strong>Stay Updated:</strong> For the latest information on credit card rewards and category details, we recommend referring directly to your credit card issuer's official resources.</p>
-
-        <p>Thank you for using our app! If you have any questions or concerns, please feel free to reach out to our support team.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "shared/disclaimer_modal" %>

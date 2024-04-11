@@ -1,27 +1,55 @@
-
-<div id="favorites">
+<div id="favorites" class="container">
   <% if @credit_cards.present? %>
-    <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div></div>
       <h1>Favorites</h1>
-      <% @credit_cards.each do |credit_card| %>
-        <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
-      <% end %>
+      <!-- Modal Button -->
+      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <i class="fas fa-info-circle fa-beat"></i>
+      </button>
     </div>
-  <% else %>
-    <div class="bg-light-blue text-light d-flex justify-content-evenly align-items-center flex-column div-with-full-vh" id="explore">
-      <div class="container text-center">
-        <div class="container mt-5">
-          <div class="card shadow p-3 mb-5 bg-white rounded">
-            <div class="card-body text-center">
-              <h3 class="card-title text-dark mb-4">Add some cards to your favorites to compare them side by side!</h3>
-              <h4 class="card-text text-dark mb-4">Explore our credit card options and click the <span class="star">&#9734;</span> to save cards you're interested in.</h4>
-              <hr>
-              <%= link_to 'Browse Card Options', current_user_transactions_path(current_user.username), class: "btn btn-outline-secondary btn-lg" %>
-            </div>
-          </div>
-        </div>
 
+    <div class="d-flex justify-content-end mb-2">
+      <div class="add-transaction-button">
+        <%= link_to new_transaction_path(username: current_user.username), class: "btn btn-secondary" do %>
+          <i class="fa-solid fa-circle-plus"></i>
+        <% end %>
       </div>
     </div>
-  <% end %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="user_transactions">
+      <% @user_transactions.each do |user_transaction| %>
+        <div class="col mb-4">
+          <%= render user_transaction, locals: { user_transaction: user_transaction } %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center">
+      <%= paginate @user_transactions %>
+    </div>
+
+    <% @credit_cards.each do |credit_card| %>
+      <%= render "credit_cards/credit_card", credit_card: credit_card, total: @credit_card_totals[credit_card.id] %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="bg-light-blue text-light d-flex justify-content-evenly align-items-center flex-column div-with-full-vh" id="explore">
+    <div class="container text-center">
+      <div class="container mt-5">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body text-center">
+            <h3 class="card-title text-dark mb-4">Add some cards to your favorites to compare them side by side!</h3>
+            <h4 class="card-text text-dark mb-4">Explore our credit card options and click the <span class="star">&#9734;</span> to save cards you're interested in.</h4>
+            <hr>
+            <%= link_to 'Browse Card Options', current_user_transactions_path(current_user.username), class: "btn btn-outline-secondary btn-lg" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>
 </div>
+
+<%= render 'shared/disclaimer_modal' %>
