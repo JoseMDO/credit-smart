@@ -224,4 +224,7 @@ body, html {
   }
 
 
-  
+.search-bar {
+  width: 25vw;
+  border-width: 1px;
+}

@@ -1,29 +1,31 @@
 class UserTransactionsController < ApplicationController
   before_action :set_user_transaction, only: %i[ show edit update destroy ]
-  before_action {authorize (@user_transaction || UserTransaction) }
-
-
+  before_action { authorize (@user_transaction || UserTransaction) }
 
   # GET /user_transactions or /user_transactions.json
   def index
     @breadcrumbs = [
-      {content: "Transactions", href: user_transactions_path},
+      { content: "Transactions", href: user_transactions_path },
     ]
-    @user_transactions = current_user.transactions.page(params[:page]).per(9)
-    authorize( policy_scope( @user_transactions ))
+
+    # @q = current_user.transactions.ransack(params[:q])
+    @q = current_user.transactions.ransack(params[:q])
+    @user_transactions = @q.result.page(params[:page]).per(9)
+
+    # @user_transactions = current_user.transactions.page(params[:page]).per(9)
+    authorize(policy_scope(@user_transactions))
     @credit_cards = CreditCard.all
     @credit_card_totals = {}
     @credit_cards.each do |credit_card|
       @credit_card_totals[credit_card.id] = credit_card.total_cash_back(current_user)
     end
-
   end
 
   # GET /user_transactions/1 or /user_transactions/1.json
   def show
     @breadcrumbs = [
-      {content: "Transactions", href: current_user_transactions_path(username: current_user.username)},
-      {content: @user_transaction.to_s, href: current_transaction_path(@user_transaction)}
+      { content: "Transactions", href: current_user_transactions_path(username: current_user.username) },
+      { content: @user_transaction.to_s, href: current_transaction_path(@user_transaction) },
     ]
     @credit_cards = CreditCard.all
     @credit_card_totals = {}
@@ -32,12 +34,11 @@ class UserTransactionsController < ApplicationController
     end
   end
 
-
   # GET /user_transactions/new
   def new
     @breadcrumbs = [
-      {content: "Transactions", href: current_user_transactions_path(username: current_user.username)},
-      {content: "New"},
+      { content: "Transactions", href: current_user_transactions_path(username: current_user.username) },
+      { content: "New" },
     ]
     @user_transaction = UserTransaction.new
   end
@@ -45,9 +46,9 @@ class UserTransactionsController < ApplicationController
   # GET /user_transactions/1/edit
   def edit
     @breadcrumbs = [
-      {content: "Transactions", href: current_user_transactions_path(username: current_user.username)},
-      {content: @user_transaction.to_s, href: current_transaction_path(@user_transaction)},
-      {content: "Edit", href: edit_transaction_path(id: @user_transaction.id)}
+      { content: "Transactions", href: current_user_transactions_path(username: current_user.username) },
+      { content: @user_transaction.to_s, href: current_transaction_path(@user_transaction) },
+      { content: "Edit", href: edit_transaction_path(id: @user_transaction.id) },
     ]
   end
 
