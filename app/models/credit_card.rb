@@ -14,9 +14,11 @@
 #
 class CreditCard < ApplicationRecord
   has_many :favorites
-  
+
   has_many :categories, through: :rewards, source: :category
 
+
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 
   # THIS CALCULATES THE TOTAL CAHS BACK FOR ALL THE USERS TRANSACTIONS FOR ALL CREDIT CARDS
   def total_cash_back(user)
@@ -40,7 +42,7 @@ class CreditCard < ApplicationRecord
     def total_cash_back_for_transaction(user_transaction)
     total_cash_back = 0
     category_id = user_transaction.category_id
-    
+
     if reward = Reward.find_by(category_id: category_id, credit_card_id: self.id)
       percentage_back = reward.percentage_back
     else
@@ -48,7 +50,7 @@ class CreditCard < ApplicationRecord
     end
     cash_back = user_transaction.amount * (percentage_back / 100)
     total_cash_back += cash_back
-    
+
     total_cash_back
   end
 
