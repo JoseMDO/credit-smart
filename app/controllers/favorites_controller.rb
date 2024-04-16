@@ -4,9 +4,11 @@ class FavoritesController < ApplicationController
 
   # GET /favorites or /favorites.json
   def index
+    @q = current_user.transactions.ransack(params[:q])
+    @user_transactions = @q.result.page(params[:page]).per(3)
+
     @favorites = current_user.favorites
     authorize(policy_scope(@favorites))
-    @user_transactions = current_user.transactions.page(params[:page]).per(3)
     @credit_cards = []
     @favorites.each do |favorite|
       @credit_cards.append(CreditCard.find_by(id: favorite.credit_card_id))

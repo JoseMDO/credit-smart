@@ -2,6 +2,17 @@ namespace :slurp do
   require "csv"
   desc "prefills production databse with required data"
 
+
+  task delete_data: :environment  do
+    Favorite.destroy_all
+    Reward.destroy_all
+    UserTransaction.destroy_all
+    CreditCard.destroy_all
+    Category.destroy_all
+    puts "Deleted All Data"
+  end
+
+
   task categories: :environment do
     csv_text = File.read(Rails.root.join("lib", "csvs", "categories.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
@@ -9,6 +20,7 @@ namespace :slurp do
     csv.each do |row|
       category = Category.new
       category.name = row["name"]
+      category.image_url = row["image_filename"]
       category.save
       puts "#{category.name} created and saved successfully."
     end

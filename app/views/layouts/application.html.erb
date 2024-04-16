@@ -19,11 +19,10 @@
 
   </head>
 
-  <body class="bg-light-blue">
+<body class="bg-light-blue">
+  <%= render partial: "shared/navbar" %>
 
-    <%= render partial: "shared/navbar" %>
-
-
+  <div class="content-wrapper">
     <% if notice.present? %>
       <%= render partial: "shared/flash", locals: { message: notice, css_class: "success" } %>
     <% end %>
@@ -33,6 +32,8 @@
     <% end %>
 
     <%= yield %>
+  </div>
 
-  </body>
+  <%= render 'shared/footer' %>
+</body>
 </html>

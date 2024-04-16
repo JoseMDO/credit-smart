@@ -52,9 +52,8 @@ body, html {
 
 
 
-.card-image {
-  max-width: 500px;
-}
+
+
 .cc-margin {
   margin-bottom: 5rem;
   margin-top: 5rem;
@@ -71,6 +70,9 @@ body, html {
 .transaction-card:hover {
   transform: scale(1.1);
 }
+
+
+
 
 .add-transaction-button {
   transition: all .2s ease-in-out;
@@ -227,4 +229,64 @@ body, html {
 .search-bar {
   width: 25vw;
   border-width: 1px;
+}
+
+.card-hover-effect {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.card-body {
+  position: relative; /* Ensure positioning context for absolute button placement */
+}
+
+.card-image {
+  width: 100%; /* Ensure the image fills the width of the card */
+  height: 200px; /* Maintain aspect ratio */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.button-container {
+  position: absolute;
+  bottom: 55%; /* Position the button container at the bottom of the card */
+  left: 50%; /* Center the button container horizontally */
+  transform: translateX(-50%); /* Center the button container relative to its parent */
+  opacity: 0; /* Initially hide the buttons */
+  transition: opacity 0.3s ease; /* Smooth transition for showing/hiding buttons */
+}
+
+.card-hover-effect:hover .card-image {
+  transform: translateY(-100px); /* Move the image up by 10px on hover */
+}
+
+.card-hover-effect:hover .button-container {
+  opacity: 1; /* Show the button container on hover */
+}
+
+
+/* Define styles for the main content wrapper */
+.content-wrapper {
+  min-height: 100vh; /* Ensure the content wrapper fills the viewport height */
+  box-sizing: border-box; /* Include padding in the height calculation */
+}
+
+/* Define styles for the footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; /* Adjust background color as needed */
+  color: #fff; /* Adjust text color as needed */
+  padding: 15px; /* Adjust padding as needed */
+  text-align: center;
+}
+
+
+.card-margin {
+  margin-top: 40px;
+}
+
+.search-margin {
+  margin-bottom: 60px;
 }
