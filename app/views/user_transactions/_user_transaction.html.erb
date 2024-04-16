@@ -12,7 +12,7 @@
     <p class="card-text">Amount: $<%= user_transaction.amount %></p>
   </div>
   <div class="card-footer text-right d-flex justify-content-center align-items-center">
-    <div class="button-container d-flex"> <!-- Container for buttons -->
+    <div class="button-container d-flex">
       <%= link_to "Edit", edit_transaction_path(id: user_transaction.id), class: "btn btn-sm btn-outline-secondary" %>
       <%= button_to "Delete", user_transaction, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger ml-2" %>
     </div>

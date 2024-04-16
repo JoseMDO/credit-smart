@@ -24,20 +24,6 @@ function toggleLandingPageClass() {
   }
 }
 
-// function toggleShowTransactionClass() {
-//   const cards = document.getElementsByClassName('t-card');
-//   console.log(cards)
-//   for (let i = 0; i < cards.length; i++) {
-//     const card = cards[i];
-//     if (window.innerWidth <= 767) {
-//       card.classList.remove('card-hover-effect');
-//     } else {
-//       card.classList.add('card-hover-effect');
-//     }
-//   }
-// }
-// Call the functions initially and add listeners for window resize
-// toggleRoundedClass();
 toggleLandingPageClass();
 toggleShowTransactionClass()
 
