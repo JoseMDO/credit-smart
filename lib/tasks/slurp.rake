@@ -1,15 +1,11 @@
 namespace :slurp do
   require "csv"
   desc "prefills production databse with required data"
-  
+
   task categories: :environment do
-    Reward.destroy_all
-    UserTransaction.destroy_all
-    Category.destroy_all
-    
     csv_text = File.read(Rails.root.join("lib", "csvs", "categories.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
-    
+
     csv.each do |row|
       category = Category.new
       category.name = row["name"]
@@ -18,12 +14,9 @@ namespace :slurp do
     end
     puts "Generated #{Category.count} Categories."
   end
- 
+
 
   task credit_cards: :environment do
-    Favorite.destroy_all
-    CreditCard.destroy_all
-
     csv_text = File.read(Rails.root.join("lib", "csvs", "credit_cards.csv"))
     csv = CSV.parse(csv_text, headers: true, encoding: "UTF-8")
 
@@ -38,7 +31,7 @@ namespace :slurp do
       credit_card.save
       puts "#{credit_card.name} created and saved successfully."
     end
-    
+
     puts "Generated #{CreditCard.count} Credit Cards."
   end
 
@@ -46,13 +39,14 @@ namespace :slurp do
 
 
   task rewards: :environment do
+    Reward.destroy_all
     card_categories = [
       {
-        "Freedom Unlimited": 
+        "Freedom Unlimited":
         {
-          "Travel": 5.00, 
-          "Dining": 3, 
-          "Shopping": 3, 
+          "Travel": 5.00,
+          "Dining": 3,
+          "Shopping": 3,
           "All": 1.5
         }
       },
@@ -79,7 +73,7 @@ namespace :slurp do
           "Travel": 5,
           "Dining": 3,
           "Shopping": 3,
-          "Telecom": 3  
+          "Telecom": 3
         }
       },
       {
@@ -88,7 +82,7 @@ namespace :slurp do
           "All": 1,
           "Auto": 3,
           "Shopping": 3,
-          "Telecom": 5, 
+          "Telecom": 5,
         }
       },
       {
@@ -97,7 +91,7 @@ namespace :slurp do
           "All": 1,
           "Dining": 4,
           "Shopping": 4,
-          "Travel": 3, 
+          "Travel": 3,
         }
       },
       {
@@ -106,19 +100,19 @@ namespace :slurp do
           "All": 1,
           "Auto": 5,
           "Shopping": 5,
-          "Travel": 5, 
+          "Travel": 5,
         }
       },
       {
         "Bank of America® Unlimited Cash Rewards":
         {
-          "All": 1.5, 
+          "All": 1.5,
         }
       },
       {
         "Citi Double Cash®":
         {
-          "All": 2, 
+          "All": 2,
         }
       }
     ]
