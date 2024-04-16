@@ -8,6 +8,7 @@ gem "pundit"
 gem "csv"
 gem 'kaminari'
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
+gem "ransack"
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"

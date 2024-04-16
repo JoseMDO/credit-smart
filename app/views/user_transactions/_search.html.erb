@@ -1,0 +1,9 @@
+<%= search_form_for q, url: current_user_transactions_path(username: current_user.username) do |f| %>
+  <div class="input-group">
+    <%= f.text_field :description_cont, placeholder: "Search with description", class: "rounded-start search-bar" %>
+    <%= f.submit "Search", class: "btn btn-outline-primary" %>
+    <%= link_to 'Clear', current_user_transactions_path(username: current_user.username), class: "btn btn-outline-secondary" %>
+  </div>
+
+<% end %>
+  

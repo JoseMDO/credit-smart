@@ -24,7 +24,11 @@ class UserTransaction < ApplicationRecord
   belongs_to :owner, class_name: "User"
   belongs_to :category
 
-  def to_s 
+  def self.ransackable_attributes(auth_object = nil)
+    ["description", "amount", "category"]
+  end
+
+  def to_s
     "#{description.truncate(10)}"
   end
 
@@ -32,5 +36,5 @@ class UserTransaction < ApplicationRecord
     "#{description}"
   end
 
-  
+
 end
