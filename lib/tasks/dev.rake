@@ -26,7 +26,7 @@ task({ :sample_data => :environment }) do
 
   users.each do |user|
     50.times do
-      amount = Faker::Number.decimal(l_digits: 2)
+      amount = Faker::Number.decimal(l_digits: rand(2..3))
       total_categories = Category.count
 
       # Select a random offset

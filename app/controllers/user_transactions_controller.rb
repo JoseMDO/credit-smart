@@ -8,17 +8,14 @@ class UserTransactionsController < ApplicationController
       { content: "Transactions", href: user_transactions_path },
     ]
 
-    # @q = current_user.transactions.ransack(params[:q])
     @q = current_user.transactions.ransack(params[:q])
     @user_transactions = @q.result.page(params[:page]).per(9)
-
-    # @user_transactions = current_user.transactions.page(params[:page]).per(9)
-    authorize(policy_scope(@user_transactions))
     @credit_cards = CreditCard.all
-    @credit_card_totals = {}
-    @credit_cards.each do |credit_card|
-      @credit_card_totals[credit_card.id] = credit_card.total_cash_back(current_user)
-    end
+    authorize(policy_scope(@user_transactions))
+
+    #Calls the credit card total calculator service class to calculate the totals for cash back
+    credit_card_calculator = CreditCardTotals.new(current_user)
+    @credit_card_totals = credit_card_calculator.get_all_transactions_totals
   end
 
   # GET /user_transactions/1 or /user_transactions/1.json
@@ -28,10 +25,10 @@ class UserTransactionsController < ApplicationController
       { content: @user_transaction.to_s, href: current_transaction_path(@user_transaction) },
     ]
     @credit_cards = CreditCard.all
-    @credit_card_totals = {}
-    @credit_cards.each do |credit_card|
-      @credit_card_totals[credit_card.id] = credit_card.total_cash_back_for_transaction(@user_transaction)
-    end
+
+    credit_card_calculator = CreditCardTotals.new(current_user)
+    @credit_card_totals = credit_card_calculator.get_individial_transaction_totals(@user_transaction)
+
   end
 
   # GET /user_transactions/new

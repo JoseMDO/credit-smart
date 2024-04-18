@@ -13,10 +13,10 @@ class FavoritesController < ApplicationController
     @favorites.each do |favorite|
       @credit_cards.append(CreditCard.find_by(id: favorite.credit_card_id))
     end
-    @credit_card_totals = {}
-    @credit_cards.each do |credit_card|
-      @credit_card_totals[credit_card.id] = credit_card.total_cash_back(current_user)
-    end
+
+    credit_card_totals = CreditCardTotals.new(current_user)
+    @credit_card_totals = credit_card_totals.get_all_transactions_totals
+
   end
 
   # GET /favorites/1 or /favorites/1.json
