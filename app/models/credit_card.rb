@@ -51,7 +51,7 @@ class CreditCard < ApplicationRecord
     cash_back = user_transaction.amount * (percentage_back / 100)
     total_cash_back += cash_back
 
-    total_cash_back
+    return total_cash_back
   end
 
 
