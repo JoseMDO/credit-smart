@@ -1,8 +1,8 @@
 
 <% if favorite %>
-  <%= link_to favorite, data: { turbo_method: :delete }, class: "btn btn-danger star-button", title: "Unfavorite" do %>
+  <%= link_to favorite, method: :delete, remote: true, id: dom_id(favorite), class: "btn btn-danger star-button", title: "Unfavorite" do %>
     <i class="fas fa-star filled"></i>
   <% end %>
 <% else %>
-  <%= render "favorites/form", favorite: Favorite.new, credit_card_id: credit_card.id %>
+  <%= render "favorites/form", favorite: current_user.favorites.build, credit_card: credit_card %>
 <% end %>

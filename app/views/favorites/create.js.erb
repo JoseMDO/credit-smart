@@ -1,0 +1,11 @@
+console.log("Favorite created successfully!");
+
+
+var unfavoriteLink = $("<%= j(render "favorites/favorite_unfavorite", favorite: @favorite, credit_card: @favorite.credit_card) %>")
+
+var favoriteLink = $("#<%= @favorite.credit_card.id %>_favorite")
+
+favoriteLink.replaceWith(unfavoriteLink)
+
+console.log(favoriteLink)
+console.log(unfavoriteLink)

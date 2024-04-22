@@ -1,0 +1,11 @@
+console.log("destroyed");
+
+var unfavoriteLink = $("#<%= dom_id(@favorite) %>");
+
+var favoriteLink = $("<%= j(render('favorites/form', favorite: @favorite, credit_card: @favorite.credit_card)) %>");
+
+unfavoriteLink.replaceWith(favoriteLink);
+
+
+console.log(unfavoriteLink);
+console.log(favoriteLink);
