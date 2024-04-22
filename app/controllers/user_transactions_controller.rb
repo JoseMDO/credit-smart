@@ -14,8 +14,8 @@ class UserTransactionsController < ApplicationController
     authorize(policy_scope(@user_transactions))
 
     #Calls the credit card total calculator service class to calculate the totals for cash back
-    credit_card_calculator = CreditCardTotals.new(current_user)
-    @credit_card_totals = credit_card_calculator.get_all_transactions_totals
+    credit_card_totals = CreditCardTotals.new(current_user)
+    @credit_card_totals = credit_card_totals.get_all_transactions_totals
   end
 
   # GET /user_transactions/1 or /user_transactions/1.json

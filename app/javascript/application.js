@@ -2,6 +2,12 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+import jquery from "jquery";
+window.jQuery = jquery;
+window.$ = jquery;
+import Rails from "@rails/ujs"
+Rails.start();
+
 
 function toggleRoundedClass() {
   const image = document.getElementById('hero-image');

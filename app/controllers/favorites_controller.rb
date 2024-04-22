@@ -41,6 +41,7 @@ class FavoritesController < ApplicationController
       if @favorite.save
         format.html { redirect_to current_user_favorites_url(username: current_user.username), notice: "Credit Card was succesfully added to your favorites!" }
         format.json { render :show, status: :created, location: @favorite }
+        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @favorite.errors, status: :unprocessable_entity }
@@ -68,6 +69,7 @@ class FavoritesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to current_user_favorites_url(username: current_user.username), notice: "Credit Card was successfully removed from your favorites." }
       format.json { head :no_content }
+      format.js
     end
   end
 
