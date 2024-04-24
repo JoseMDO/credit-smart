@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
+#  admin                  :boolean          default(FALSE), not null
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  remember_created_at    :datetime
@@ -28,5 +29,5 @@ class User < ApplicationRecord
   has_many :transactions, class_name: "UserTransaction", foreign_key: "owner_id"
   has_many :favorites
 
-  
+
 end

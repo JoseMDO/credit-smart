@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  authenticate :user, ->(user) { user.admin? } do
+    mount RailsAdmin::Engine, at: "admin", as: "rails_admin"
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   root "home#index"
 
   resources :favorites, only: [:create, :destroy, :index]

@@ -30,9 +30,6 @@ function toggleLandingPageClass() {
   }
 }
 
-toggleLandingPageClass();
-toggleShowTransactionClass()
 
 window.addEventListener('resize', toggleRoundedClass);
 window.addEventListener('resize', toggleLandingPageClass);
-window.addEventListener('resize', toggleShowTransactionClass);

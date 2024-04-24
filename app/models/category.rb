@@ -11,6 +11,7 @@
 class Category < ApplicationRecord
 
   has_many :user_transactions
+  has_many :rewards # needed for rails_admin
   has_many :credit_cards, through: :rewards, source: :credit_card
 
 

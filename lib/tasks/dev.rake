@@ -19,7 +19,7 @@ task({ :sample_data => :environment }) do
   end
 
   users.append(User.create(username: "alice", email: "alice@example.com", password: "password"))
-  users.append(User.create(username: "bob", email: "bob@example.com", password: "password"))
+  users.append(User.create(username: "bob", email: "bob@example.com", password: "password", admin: true))
 
 
   transactions = []
