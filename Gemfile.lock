@@ -109,8 +109,6 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    cssbundling-rails (1.4.0)
-      railties (>= 6.0.0)
     csv (3.3.0)
     date (3.3.3)
     debug (1.7.2)
@@ -439,7 +437,6 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   capybara
-  cssbundling-rails
   csv
   debug
   devise

@@ -10,7 +10,7 @@ gem 'kaminari'
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem "ransack"
 gem "rails_admin", "~> 3.1"
-gem "cssbundling-rails"
+# gem "cssbundling-rails"
 gem "sassc-rails"
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
