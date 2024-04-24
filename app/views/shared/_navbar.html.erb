@@ -8,7 +8,7 @@
 
     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
       <li>
-        <%= link_to 'Explore', root_path(anchor: "explore"), class: "nav-link" %> 
+        <%= link_to 'Explore', root_path(anchor: "explore"), class: "nav-link" %>
       </li>
       <li>
         <%= link_to 'Benefits', root_path(anchor: "benefits"), class: "nav-link" %>
@@ -25,7 +25,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
-              <%= link_to 'Transactions', current_user_transactions_path(username: current_user.username), class: "nav-link"  %> 
+              <%= link_to 'Transactions', current_user_transactions_path(username: current_user.username), class: "nav-link"  %>
             </li>
             <li>
               <%= link_to 'Favorite Cards', current_user_favorites_path(username: current_user.username), class: "nav-link"  %>
@@ -38,6 +38,12 @@
             <li class="nav-item">
               <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
             </li>
+            
+            <% if current_user.admin? %>
+              <li class="nav-item">
+                <%= link_to "Admin", rails_admin_path, class: "nav-link" %>
+              </li>
+            <% end %>
           </ul>
         </li>
       <% else %>

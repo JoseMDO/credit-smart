@@ -23,6 +23,6 @@ class Reward < ApplicationRecord
   belongs_to :category
   belongs_to :credit_card
 
-  
-  
+  validates :credit_card_id, uniqueness: { scope: :category_id }
+
 end

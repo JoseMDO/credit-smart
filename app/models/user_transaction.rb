@@ -24,6 +24,11 @@ class UserTransaction < ApplicationRecord
   belongs_to :owner, class_name: "User"
   belongs_to :category
 
+  validates :amount, presence: true
+  validates :description, presence: true
+
+
+
   def self.ransackable_attributes(auth_object = nil)
     ["description", "amount", "category"]
   end
