@@ -144,7 +144,9 @@ namespace :slurp do
       end
     end
     puts "Generated #{Reward.count} Rewards"
+  end
 
-
+  task admin_user: :environment do
+    User.create(username: "Jose", email: "jose@creditsmart.com", password: "credit-smart-password", admin: true)
   end
 end

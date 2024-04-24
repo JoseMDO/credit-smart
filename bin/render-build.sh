@@ -12,3 +12,4 @@ bundle exec rake db:migrate
 bundle exec rake slurp:categories
 bundle exec rake slurp:credit_cards
 bundle exec rake slurp:rewards
+bundle exec rake slurp:admin_user
