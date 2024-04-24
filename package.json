@@ -1,0 +1,15 @@
+{
+  "name": "credit-smart",
+  "version": "1.0.0",
+  "description": "Credit Smart is an educational tool that allows consumers to realize the potenital of making their everyday purchases with a credit card in comparison to a debit card. This application is for people who are not too well educated about the benefits of credit cards and the potential they hold.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
