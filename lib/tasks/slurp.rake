@@ -1,6 +1,6 @@
 namespace :slurp do
   require "csv"
-  desc "prefills production databse with required data"
+  desc "prefills databse with required data"
 
 
   task delete_data: :environment  do
@@ -146,7 +146,4 @@ namespace :slurp do
     puts "Generated #{Reward.count} Rewards"
   end
 
-  task admin_user: :environment do
-    User.create(username: "Jose", email: "jose@creditsmart.com", password: "credit-smart-password", admin: true)
-  end
 end
