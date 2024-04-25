@@ -21,10 +21,26 @@
 
   <!-- User Transactions Section with Pagination -->
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="user_transactions">
-    <% @user_transactions.each do |user_transaction| %>
-      <div class="col">
-        <%= render user_transaction, locals: { user_transaction: user_transaction } %>
+    <% if @user_transactions.count == 0 %>
+      <!-- Show the add transaction button -->
+      <div class="container d-flex justify-content-center align-items-center mb-4">
+        <div class="card text-center" style="max-width: 400px;">
+          <div class="card-body">
+            <h5 class="card-title">Add Transactions to Start Seeing Cash Back!</h5>
+            <p class="card-text">Begin earning rewards by adding your first transaction.</p>
+            <%= link_to new_transaction_path(username: current_user.username), class: "btn btn-secondary btn-lg btn-block" do %>
+              Add Transaction
+            <% end %>
+          </div>
+        </div>
       </div>
+    <% else %>
+      <!-- Render each user transaction -->
+      <% @user_transactions.each do |user_transaction| %>
+        <div class="col">
+          <%= render user_transaction, locals: { user_transaction: user_transaction } %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
