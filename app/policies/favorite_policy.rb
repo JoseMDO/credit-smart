@@ -22,7 +22,7 @@ class FavoritePolicy < ApplicationPolicy
   end
 
   def destroy?
-    favorite.user.id = user.id
+    favorite.user.id == user.id
   end
 
 end
