@@ -25,11 +25,13 @@
 
 * As a user, you can also see individual cash backs for each transaction you add. It takes the same approach as the calculation for seeing all trasnaction totals but just shows the total for the selected transaction. In case a user would like to see how much they get back just for that individual categroy of transaction.
 
+[![Watch the video](https://i9.ytimg.com/vi/E7sjI4x3r-8/mq1.jpg?sqp=CIyRqrEG-oaymwEmCMACELQB8quKqQMa8AEB-AHGBYAC4AOKAgwIABABGGUgZShlMA8=&rs=AOn4CLDERmqzKtCsRvwcRG7LL_WNBaKPSw)](https://youtu.be/E7sjI4x3r-8)
 
 ### Favorite Credit Cards
 
   * A user can add certian cards that they like to their favorites, which when on the favorites page, will only show those specific credit cards that they chose. This allows a user to compare and contrast the cash back of only the cards they would like to see instead of seeing all of them. Makes it simpler for the user to narrow down their credit card choices. This feature will become more useful once I am able to gather all of the credit cards out there and then there are dozens of cards to look through. 
 
+[![Watch the video](https://i9.ytimg.com/vi_webp/S8q_jxytiCM/mq2.webp?sqp=CIyRqrEG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLDYmj-TVPlGYV7U55V-ECciOHNrig)](https://youtu.be/S8q_jxytiCM)
 
 ## Technologies Used
 ---
@@ -131,7 +133,8 @@ After running the above commands you will have generated all the data needed to 
 * Password: ``password``
 
 ### Entity Relationship Diagram
-[Entity Relationship Diagram](https://github.com/JoseMDO/credit-smart/blob/main/app/assets/images/auto.jpeg) 
+![Screenshot 2024-03-26 at 11 39 16 AM](https://github.com/JoseMDO/credit-smart/assets/112668683/bccb5e06-6436-47bf-97e6-222a6e59e720)
+
 
 ## Contribution Guidelines 
 ---
