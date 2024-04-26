@@ -143,7 +143,11 @@ Thank you for your interest in contributing to **CreditSmart**. This document pr
 
 ### How to Contribute
 1. **Setup your environment**: Follow the installation instructions above.
+
+[Github Project Link](https://github.com/users/JoseMDO/projects/1)
+
 2. **Find an issue to work on**: In the Projects tab, check out our issues, we continue to add new issues daily and feel free to create your own issues as well.
+ 
 
 ### Coding Conventions
 We adhere to the Ruby community style guide, and we expect all contributors to follow suit. Here are key conventions specific to our project:
