@@ -19,19 +19,19 @@
 
   * As a user, you can add as many transactions as you would like to add and the tool will show you multiple different credit card options and how much cash back you would get in total for all of your transactions combined. The calculations are made based on a few factors, each credit card has a rewards system, it takes in the category of the transaction, and then it has a certain percentage that this certian category gets back. It will calculate that specific total for each transaction and add them all together for each card that is available. For example, Chase Freedom Unlimited will give you 1.5 percent back on the "All" category, so a transaction that has the "All" category attached to it will calculate the total amount of the transaction times 1.5 percent to get the cash back for that transaction.
 
-[![Watch the video](https://i9.ytimg.com/vi_webp/dlCW2HH_YKw/mq1.webp?sqp=CLSMqrEG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLDmiHbbF226REGQ67SHx12LBKGzuw)](https://youtu.be/dlCW2HH_YKw)
+[![Watch the video](https://i9.ytimg.com/vi_webp/dlCW2HH_YKw/mq1.webp?sqp=CKDXr7EG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLAgJtY2ROsjMS03OC-2hS7Fu2DmBA)](https://youtu.be/dlCW2HH_YKw)
 
 ### Individual Cash Back Visualization
 
 * As a user, you can also see individual cash backs for each transaction you add. It takes the same approach as the calculation for seeing all trasnaction totals but just shows the total for the selected transaction. In case a user would like to see how much they get back just for that individual categroy of transaction.
 
-[![Watch the video](https://i9.ytimg.com/vi/E7sjI4x3r-8/mq1.jpg?sqp=CIyRqrEG-oaymwEmCMACELQB8quKqQMa8AEB-AHGBYAC4AOKAgwIABABGGUgZShlMA8=&rs=AOn4CLDERmqzKtCsRvwcRG7LL_WNBaKPSw)](https://youtu.be/E7sjI4x3r-8)
+[![Watch the video](https://i9.ytimg.com/vi_webp/E7sjI4x3r-8/mq1.webp?sqp=CPTUr7EG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLCroQyA2OgOy-w7tKp69KfIJBl9WA)](https://youtu.be/E7sjI4x3r-8)
 
 ### Favorite Credit Cards
 
   * A user can add certian cards that they like to their favorites, which when on the favorites page, will only show those specific credit cards that they chose. This allows a user to compare and contrast the cash back of only the cards they would like to see instead of seeing all of them. Makes it simpler for the user to narrow down their credit card choices. This feature will become more useful once I am able to gather all of the credit cards out there and then there are dozens of cards to look through. 
 
-[![Watch the video](https://i9.ytimg.com/vi_webp/S8q_jxytiCM/mq2.webp?sqp=CIyRqrEG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLDYmj-TVPlGYV7U55V-ECciOHNrig)](https://youtu.be/S8q_jxytiCM)
+[![Watch the video](https://i9.ytimg.com/vi_webp/S8q_jxytiCM/mq2.webp?sqp=CPTUr7EG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLD6NO0UpnfGmJrA7qiJDQJRwn5LUg)](https://youtu.be/S8q_jxytiCM)
 
 ## Technologies Used
 ---
