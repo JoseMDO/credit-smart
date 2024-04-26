@@ -1,4 +1,4 @@
-# Credit Smart MVP Functional Specification
+# Credit Smart
 
   Credit Smart is an educational tool that allows consumers to realize the potenital of making their everyday purchases with a credit card in comparison to a debit card. It also gives them a breif overview of the benefits that come with using credit cards as well as some tips and tricks to take full advantage of the perks of having one. This application is for people who are not too well educated about the benefits of credit cards and the potential they hold. 
 
