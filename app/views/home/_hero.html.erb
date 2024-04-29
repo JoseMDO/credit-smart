@@ -1,0 +1,14 @@
+<div class="bg-light-blue d-flex justify-content-center align-items-center div-with-full-vh" id="hero">
+  <div class="row h-100 w-100">
+    <!-- Left Column - Text Content -->
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center z-1">
+      <h1 class="display-4 text-dark mb-4">Empower Your Finances</h1>
+      <p class="lead text-dark mb-4">Discover the Hidden Benefits of Using a Credit Card for Your Daily Transactions</p>
+      <%= link_to 'Learn More', root_path(anchor: "benefits"), class: "btn btn-secondary" %>
+    </div>
+    <!-- Right Column - Image -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center p-0 m-0 overflow-hidden">
+      <%= image_tag 'credit-card-11.jpg', class: "img-fluid rounded-start-pill shadow object-fit-cover h-100 hero", id: 'hero-image'%>
+    </div>
+  </div>
+</div>

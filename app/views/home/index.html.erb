@@ -1,170 +1,32 @@
-<div class="bg-light-blue d-flex justify-content-center align-items-center div-with-full-vh" id="hero">
-  <div class="row h-100 w-100">
-    <!-- Left Column - Text Content -->
-    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center z-1">
-      <h1 class="display-4 text-dark mb-4">Empower Your Finances</h1>
-      <p class="lead text-dark mb-4">Discover the Hidden Benefits of Using a Credit Card for Your Daily Transactions</p>
-      <%= link_to 'Learn More', root_path(anchor: "benefits"), class: "btn btn-secondary" %>
-    </div>
-    <!-- Right Column - Image -->
-    <div class="col-md-6 d-flex justify-content-center align-items-center p-0 m-0 overflow-hidden">
-      <%= image_tag 'credit-card-11.jpg', class: "img-fluid rounded-start-pill shadow object-fit-cover h-100 hero", id: 'hero-image'%>
-    </div>
-  </div>
-</div>
+<%= render "home/hero" %>
 
-<!-- Second div -->
-<div class="bg-dark-blue text-light d-flex justify-content-evenly align-items-center flex-column div-with-full-vh" id="explore">
-  <div class="container text-center">
-    <h1 class="display-4 mb-4">Explore</h1>
-    <p class="lead mb-5">Compare your everyday transactions to see how much potential earnings you could have using different credit card options.</p>
-    <a href="<%= new_user_transaction_path %>" class="btn btn-primary btn-lg">Get Started</a>
-  </div>
-</div>
+
+<%= render "home/explore" %>
+
 
 <div class="div-with-background" style="background-image: url('<%= asset_path('credit-card-3.avif') %>');">
   <div class="overlay"></div>
 </div>
 
-<!-- Third div -->
-<div class="bg-dark-blue text-light d-flex justify-content-center align-items-center div-with-full-vh" id="benefits">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <h1 class="display-4 mb-4">Benefits</h1>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-4">
-        <div class="card mb-4 rounded shadow bg-transparent landing-page-card landing-card" id="landing-card">
-          <div class="card-body text-center">
-            <h3 class="mb-3 text-light">Rewards & Cash Back</h3>
-            <p class="text-light">Get perks for spending with rewards programs, earning points, miles, or cash back on purchases.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 rounded shadow bg-transparent landing-page-card landing-card" id="landing-card">
-          <div class="card-body text-center">
-            <h3 class="mb-3 text-light">Credit Building</h3>
-            <p class="text-light">Responsible card use can boost your credit score, opening doors to better loan rates and financial opportunities.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 rounded shadow bg-transparent landing-page-card landing-card" id="landing-card">
-          <div class="card-body text-center">
-            <h3 class="mb-3 text-light">Fraud Protection</h3>
-            <p class="text-light">Enjoy peace of mind with robust fraud protection, including zero-liability policies and advanced security features.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+<%= render "home/benefits" %>
 
 <div class="div-with-background" style="background-image: url('<%= asset_path('credit_card_1.jpg') %>');">
   <div class="overlay">
   </div>
 </div>
 
-<!-- Fourth div -->
-<div class="bg-light-blue text-dark d-flex justify-content-center align-items-center div-with-full-vh" id="tips-tricks">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <h1 class="display-4 mb-4">Tips & Tricks</h1>
-      </div>
-    </div>
-    <div class="row justify-content-center mt-4">
-      <div class="col-md-4">
-        <div class="mb-4 mx-2 bg-transparent landing-page-card landing-card" id="landing-card">
-          <div class="text-center">
-            <h3 class="mb-3">Keep Old Cards Open</h3>
-            <p>Keeping old credit cards open can positively impact your credit score by maintaining a longer credit history. Even if you're not actively using them, these accounts contribute to your overall credit age, which is a key factor in determining your creditworthiness.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="mb-4 mx-2 bg-transparent landing-page-card landing-card" id="landing-card">
-          <div class="text-center">
-            <h3 class="mb-3">Pay On Time</h3>
-            <p>Making timely payments on your credit card bills is essential for maintaining a healthy credit score. Late payments can negatively impact your credit history and result in late fees, penalty interest rates, and damage to your creditworthiness. Set up automatic payments or reminders to ensure you never miss a payment deadline.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="mb-4 mx-2 bg-transparent landing-page-card landing-card" id="landing-card">
-          <div class="text-center">
-            <h3 class="mb-3">Pay Balance</h3>
-            <p>Paying off your credit card balance in full each month can save you money on interest charges and help you avoid accumulating debt. By paying the full balance, you also demonstrate responsible credit management to creditors, which can lead to better credit offers and terms in the future.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+<%= render "home/tips_tricks" %>
+
+<div class="div-with-background" style="background-image: url('<%= asset_path('credit-card-7.jpg') %>');">
+  <div class="overlay">
   </div>
 </div>
 
-<div class="bg-dark-blue text-light div-with-full-vh d-flex justify-content-center align-items-center">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style="max-width: 80%;">
-    <div class="carousel-inner h-100">
-      <div class="carousel-item active h-100">
-        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
-          <div class="review-card-body text-center">
-            <h3 class="reviewer-name mb-3">Bob</h3>
-            <p class="review-text">"This app has streamlined my financial decisions by showing the value of credit card rewards. It's easy to compare and make informed choices. Highly recommended!"</p>
-            <div class="star-rating">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="carousel-item active h-100">
-        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
-          <div class="review-card-body text-center">
-            <h3 class="reviewer-name mb-3">Alice</h3>
-            <p class="review-text">"Great app for understanding credit card rewards. It simplifies comparisons and offers valuable tips to improve credit habits. A must-have for savvy users!"</p>
-            <div class="star-rating">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-            </div>
-          </div>
-        </div>
-      </div>
+<%= render "home/instructive" %>
 
-      <div class="carousel-item active h-100">
-        <div class="review-card mb-4 rounded shadow bg-dark-blue mx-auto">
-          <div class="review-card-body text-center">
-            <h3 class="reviewer-name mb-3">John</h3>
-            <p class="review-text">"This app has changed the way I manage transactions. It's intuitive and calculates potential cash back with different credit cards for each purchase. Highly recommended for maximizing rewards!"</p>
-            <div class="star-rating">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    <!-- Previous and Next buttons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="left: 20px;">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" style="right: 20px;">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
+
+<%= render "home/reviews" %>
