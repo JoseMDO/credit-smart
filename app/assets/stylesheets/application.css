@@ -290,3 +290,13 @@ body, html {
 .search-margin {
   margin-bottom: 60px;
 }
+
+
+.video-container {
+  max-width: 800px; /* Set maximum width */
+  overflow: hidden;
+}
+
+.video {
+  max-width: 100%;
+}
