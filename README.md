@@ -26,14 +26,14 @@
 
 * As a user, you can also see individual cash backs for each transaction you add. It takes the same approach as the calculation for seeing all trasnaction totals but just shows the total for the selected transaction. In case a user would like to see how much they get back just for that individual categroy of transaction.
 
-[![Watch the video](https://github.com/JoseMDO/credit-smart/assets/112668683/945d969e-014a-490e-9e4d-8e24786da344)](https://youtu.be/E7sjI4x3r-8)
+[![Watch the video](https://github.com/JoseMDO/credit-smart/assets/112668683/3342ef2c-ec5c-4f23-ba7b-80b59a8192ee)](https://youtu.be/E7sjI4x3r-8)
 
 
 ### Favorite Credit Cards
 
   * A user can add certian cards that they like to their favorites, which when on the favorites page, will only show those specific credit cards that they chose. This allows a user to compare and contrast the cash back of only the cards they would like to see instead of seeing all of them. Makes it simpler for the user to narrow down their credit card choices. This feature will become more useful once I am able to gather all of the credit cards out there and then there are dozens of cards to look through. 
 
-[![Watch the video](https://i9.ytimg.com/vi_webp/S8q_jxytiCM/mq2.webp?sqp=CPTUr7EG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLD6NO0UpnfGmJrA7qiJDQJRwn5LUg)](https://youtu.be/S8q_jxytiCM)
+[![Watch the video](https://github.com/JoseMDO/credit-smart/assets/112668683/af5c1626-1ca3-49cf-9474-659c27d44b23)](https://youtu.be/S8q_jxytiCM)
 
 ## Technologies Used
 ---
