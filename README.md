@@ -19,7 +19,8 @@
 
   * As a user, you can add as many transactions as you would like to add and the tool will show you multiple different credit card options and how much cash back you would get in total for all of your transactions combined. The calculations are made based on a few factors, each credit card has a rewards system, it takes in the category of the transaction, and then it has a certain percentage that this certian category gets back. It will calculate that specific total for each transaction and add them all together for each card that is available. For example, Chase Freedom Unlimited will give you 1.5 percent back on the "All" category, so a transaction that has the "All" category attached to it will calculate the total amount of the transaction times 1.5 percent to get the cash back for that transaction.
 
-[![Watch the video](https://i9.ytimg.com/vi_webp/dlCW2HH_YKw/mq1.webp?sqp=CKDXr7EG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLAgJtY2ROsjMS03OC-2hS7Fu2DmBA)](https://youtu.be/dlCW2HH_YKw)
+[![Watch the video](https://github.com/JoseMDO/credit-smart/assets/112668683/ac355339-3874-4bef-b6f5-a0ffbf16ed03)](https://youtu.be/dlCW2HH_YKw)
+
 
 ### Individual Cash Back Visualization
 
