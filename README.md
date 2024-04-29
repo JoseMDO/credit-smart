@@ -26,7 +26,8 @@
 
 * As a user, you can also see individual cash backs for each transaction you add. It takes the same approach as the calculation for seeing all trasnaction totals but just shows the total for the selected transaction. In case a user would like to see how much they get back just for that individual categroy of transaction.
 
-[![Watch the video](https://i9.ytimg.com/vi_webp/E7sjI4x3r-8/mq1.webp?sqp=CPTUr7EG-oaymwEmCMACELQB8quKqQMa8AEB-AGsCIAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLCroQyA2OgOy-w7tKp69KfIJBl9WA)](https://youtu.be/E7sjI4x3r-8)
+[![Watch the video](https://github.com/JoseMDO/credit-smart/assets/112668683/945d969e-014a-490e-9e4d-8e24786da344)](https://youtu.be/E7sjI4x3r-8)
+
 
 ### Favorite Credit Cards
 
