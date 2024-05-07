@@ -200,3 +200,32 @@ Thank you for contributing to **Credit Smart**!
 
 ### Ruby Version Errors
 * The project is written using Ruby 3.2.1, if you encounter issues upon cloning, make sure you have Ruby version 3.1.1 in your environment.
+
+<hr>
+
+# Code Review
+
+## Documentation
+- Excellent README file. Well-organized and great use of visual aids & nice FAQ section
+
+## Version Control
+- Good branching!
+- Small nitpick: Some of your commit comments could be more descriptive. You have a few instances of "tests", "more tests", or "updated files". However, overall your commit messages are fine
+- Also, good use of project board! Be sure to convert your project board items to issues when you to start to work on them. There were a few that were still in draft status/not connected to a branch or PR! Overall good job
+
+## Code Hygiene
+- Consistent indentation throughout; good job. 
+- Remove any unnecessary blank lines; stick to using either 1 space when separating blocks
+- Remove any unused unnecessary/unused code
+
+## Frontend
+- Excellent use of partials for your reusable components
+- Good styling throughout
+- Great use of jQuery on your CRUD actions
+
+## Backend
+- Nice use of slurp tasks for CSVs
+
+## General feedback
+- Good use of search, pagination, and including rails_admin
+- Also, great use of jQuery

@@ -16,7 +16,7 @@ class CreditCard < ApplicationRecord
   has_many :favorites
   has_many :rewards # needed for rails_admin
   has_many :categories, through: :rewards, source: :category
-
+  # Get rid of extra lines!
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 

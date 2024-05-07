@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :destroy, :index]
   resources :user_transactions
   devise_for :users
-
+  # Nitpick: Remove extra lines! Keep your spacing consistent. Use either 1 or 2 spaces to separate your blocks.
 
   get ":username/transactions" => "user_transactions#index", as: :current_user_transactions
   get ":username/transaction/new" => "user_transactions#new", as: :new_transaction

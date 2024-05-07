@@ -24,7 +24,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  # Get rid of extra lines!
 
   has_many :transactions, class_name: "UserTransaction", foreign_key: "owner_id"
   has_many :favorites
