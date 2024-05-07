@@ -5,7 +5,7 @@ var unfavoriteLink = $("#<%= dom_id(@favorite) %>");
 var favoriteLink = $("<%= j(render('favorites/form', favorite: @favorite, credit_card: @favorite.credit_card)) %>");
 
 unfavoriteLink.replaceWith(favoriteLink);
-
+<%# Get rid of extra lines! Keep it consistent%>
 
 console.log(unfavoriteLink);
 console.log(favoriteLink);

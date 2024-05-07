@@ -1,6 +1,7 @@
 console.log("Favorite created successfully!");
 
-
+<%# teeny tiny nitpick! May be a good place to use "let" instead of "var". However, "var" is still fine. Here is some reading: 
+https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/ %>
 var unfavoriteLink = $("<%= j(render "favorites/favorite_unfavorite", favorite: @favorite, credit_card: @favorite.credit_card) %>")
 
 var favoriteLink = $("#<%= @favorite.credit_card.id %>_favorite")

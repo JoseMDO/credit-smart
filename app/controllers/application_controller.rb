@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
   after_action :verify_policy_scoped, only: :index, unless: :skip_policy_scope_check?
 
   before_action :authenticate_user!, unless: :home_controller?
+  # REMOVE BELOW LINE! Get rid of any unnecessary code/unused code
   # before_action :configure_permitted_parameters, if: :devise_controller?
 
+  # Nitpick: Remove extra lines! Keep your spacing consistent. Use either 1 or 2 spaces to separate your blocks.
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 

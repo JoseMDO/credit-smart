@@ -26,7 +26,7 @@ class UserTransaction < ApplicationRecord
 
   validates :amount, presence: true
   validates :description, presence: true
-
+  # Get rid of extra lines
 
 
   def self.ransackable_attributes(auth_object = nil)
