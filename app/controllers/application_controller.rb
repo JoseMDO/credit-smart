@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   skip_forgery_protection
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  #test
+  #test 2
+
   include Pundit::Authorization
 
   after_action :verify_authorized, unless: :skip_authorization_check?
